@@ -86,12 +86,12 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://note.complexpug.com/%E5%9F%BA%E7%A1%80%E5%B7%A5%E5%85%B7/git/git/</loc>
+         <loc>https://note.complexpug.com/%E5%9F%BA%E7%A1%80%E5%B7%A5%E5%85%B7/note/</loc>
          <lastmod>2024-05-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://note.complexpug.com/%E5%9F%BA%E7%A1%80%E5%B7%A5%E5%85%B7/git/github/</loc>
+         <loc>https://note.complexpug.com/%E5%9F%BA%E7%A1%80%E5%B7%A5%E5%85%B7/git/git/</loc>
          <lastmod>2024-05-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -106,7 +106,7 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://note.complexpug.com/%E5%9F%BA%E7%A1%80%E5%B7%A5%E5%85%B7/git/CI/GithubAction/</loc>
+         <loc>https://note.complexpug.com/%E5%9F%BA%E7%A1%80%E5%B7%A5%E5%85%B7/github/github/</loc>
          <lastmod>2024-05-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -192,6 +192,11 @@
     </url>
     <url>
          <loc>https://note.complexpug.com/%E6%95%B0%E6%8D%AE%E5%BA%93/orm/mybatis/</loc>
+         <lastmod>2024-05-02</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://note.complexpug.com/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/note/</loc>
          <lastmod>2024-05-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
