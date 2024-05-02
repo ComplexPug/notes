@@ -1,317 +1,317 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-         <loc>https://note.complexpug.com/</loc>
+         <loc>https://notes.complexpug.com/</loc>
          <lastmod>2024-05-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://note.complexpug.com/Stack/</loc>
+         <loc>https://notes.complexpug.com/Stack/</loc>
          <lastmod>2024-05-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://note.complexpug.com/Books/note/</loc>
+         <loc>https://notes.complexpug.com/Books/note/</loc>
          <lastmod>2024-05-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://note.complexpug.com/DevOps/note/</loc>
+         <loc>https://notes.complexpug.com/DevOps/note/</loc>
          <lastmod>2024-05-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://note.complexpug.com/Other/note/</loc>
+         <loc>https://notes.complexpug.com/Other/note/</loc>
          <lastmod>2024-05-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://note.complexpug.com/Source%20Code/LinuxKernel/note/</loc>
+         <loc>https://notes.complexpug.com/Source%20Code/LinuxKernel/note/</loc>
          <lastmod>2024-05-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://note.complexpug.com/Source%20Code/Minix/note/</loc>
+         <loc>https://notes.complexpug.com/Source%20Code/Minix/note/</loc>
          <lastmod>2024-05-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://note.complexpug.com/Source%20Code/Nginx/note/</loc>
+         <loc>https://notes.complexpug.com/Source%20Code/Nginx/note/</loc>
          <lastmod>2024-05-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://note.complexpug.com/Source%20Code/Redis/note/</loc>
+         <loc>https://notes.complexpug.com/Source%20Code/Redis/note/</loc>
          <lastmod>2024-05-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://note.complexpug.com/Source%20Code/fastjson/note/</loc>
+         <loc>https://notes.complexpug.com/Source%20Code/fastjson/note/</loc>
          <lastmod>2024-05-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://note.complexpug.com/Source%20Code/mkdocs/note/</loc>
+         <loc>https://notes.complexpug.com/Source%20Code/mkdocs/note/</loc>
          <lastmod>2024-05-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://note.complexpug.com/Source%20Code/netty/note/</loc>
+         <loc>https://notes.complexpug.com/Source%20Code/netty/note/</loc>
          <lastmod>2024-05-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://note.complexpug.com/Source%20Code/python/note/</loc>
+         <loc>https://notes.complexpug.com/Source%20Code/python/note/</loc>
          <lastmod>2024-05-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://note.complexpug.com/web%E5%BC%80%E5%8F%91/json/note/</loc>
+         <loc>https://notes.complexpug.com/web%E5%BC%80%E5%8F%91/json/note/</loc>
          <lastmod>2024-05-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://note.complexpug.com/web%E5%BC%80%E5%8F%91/nginx/note/</loc>
+         <loc>https://notes.complexpug.com/web%E5%BC%80%E5%8F%91/nginx/note/</loc>
          <lastmod>2024-05-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://note.complexpug.com/web%E5%BC%80%E5%8F%91/vue/note/</loc>
+         <loc>https://notes.complexpug.com/web%E5%BC%80%E5%8F%91/vue/note/</loc>
          <lastmod>2024-05-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://note.complexpug.com/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/note/</loc>
+         <loc>https://notes.complexpug.com/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/note/</loc>
          <lastmod>2024-05-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://note.complexpug.com/%E5%9F%BA%E7%A1%80%E5%B7%A5%E5%85%B7/note/</loc>
+         <loc>https://notes.complexpug.com/%E5%9F%BA%E7%A1%80%E5%B7%A5%E5%85%B7/note/</loc>
          <lastmod>2024-05-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://note.complexpug.com/%E5%9F%BA%E7%A1%80%E5%B7%A5%E5%85%B7/git/git/</loc>
+         <loc>https://notes.complexpug.com/%E5%9F%BA%E7%A1%80%E5%B7%A5%E5%85%B7/git/git/</loc>
          <lastmod>2024-05-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://note.complexpug.com/%E5%9F%BA%E7%A1%80%E5%B7%A5%E5%85%B7/git/git%E8%A7%84%E8%8C%83/</loc>
+         <loc>https://notes.complexpug.com/%E5%9F%BA%E7%A1%80%E5%B7%A5%E5%85%B7/git/git%E8%A7%84%E8%8C%83/</loc>
          <lastmod>2024-05-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://note.complexpug.com/%E5%9F%BA%E7%A1%80%E5%B7%A5%E5%85%B7/git/yxc_git/</loc>
+         <loc>https://notes.complexpug.com/%E5%9F%BA%E7%A1%80%E5%B7%A5%E5%85%B7/git/yxc_git/</loc>
          <lastmod>2024-05-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://note.complexpug.com/%E5%9F%BA%E7%A1%80%E5%B7%A5%E5%85%B7/github/github/</loc>
+         <loc>https://notes.complexpug.com/%E5%9F%BA%E7%A1%80%E5%B7%A5%E5%85%B7/github/github/</loc>
          <lastmod>2024-05-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://note.complexpug.com/%E5%9F%BA%E7%A1%80%E5%B7%A5%E5%85%B7/%E5%86%99%E4%BD%9C/LaTeX/base/</loc>
+         <loc>https://notes.complexpug.com/%E5%9F%BA%E7%A1%80%E5%B7%A5%E5%85%B7/%E5%86%99%E4%BD%9C/LaTeX/base/</loc>
          <lastmod>2024-05-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://note.complexpug.com/%E5%9F%BA%E7%A1%80%E5%B7%A5%E5%85%B7/%E5%86%99%E4%BD%9C/LaTeX/beamer/</loc>
+         <loc>https://notes.complexpug.com/%E5%9F%BA%E7%A1%80%E5%B7%A5%E5%85%B7/%E5%86%99%E4%BD%9C/LaTeX/beamer/</loc>
          <lastmod>2024-05-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://note.complexpug.com/%E5%9F%BA%E7%A1%80%E5%B7%A5%E5%85%B7/%E5%86%99%E4%BD%9C/Markdown/Markdown/</loc>
+         <loc>https://notes.complexpug.com/%E5%9F%BA%E7%A1%80%E5%B7%A5%E5%85%B7/%E5%86%99%E4%BD%9C/Markdown/Markdown/</loc>
          <lastmod>2024-05-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://note.complexpug.com/%E5%9F%BA%E7%A1%80%E5%B7%A5%E5%85%B7/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/Linux/note/</loc>
+         <loc>https://notes.complexpug.com/%E5%9F%BA%E7%A1%80%E5%B7%A5%E5%85%B7/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/Linux/note/</loc>
          <lastmod>2024-05-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://note.complexpug.com/%E5%9F%BA%E7%A1%80%E5%B7%A5%E5%85%B7/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/Macos/note/</loc>
+         <loc>https://notes.complexpug.com/%E5%9F%BA%E7%A1%80%E5%B7%A5%E5%85%B7/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/Macos/note/</loc>
          <lastmod>2024-05-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://note.complexpug.com/%E5%9F%BA%E7%A1%80%E5%B7%A5%E5%85%B7/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/Windows/note/</loc>
+         <loc>https://notes.complexpug.com/%E5%9F%BA%E7%A1%80%E5%B7%A5%E5%85%B7/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/Windows/note/</loc>
          <lastmod>2024-05-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://note.complexpug.com/%E5%9F%BA%E7%A1%80%E5%B7%A5%E5%85%B7/%E7%BB%88%E7%AB%AF/tmux/</loc>
+         <loc>https://notes.complexpug.com/%E5%9F%BA%E7%A1%80%E5%B7%A5%E5%85%B7/%E7%BB%88%E7%AB%AF/tmux/</loc>
          <lastmod>2024-05-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://note.complexpug.com/%E5%9F%BA%E7%A1%80%E5%B7%A5%E5%85%B7/%E7%BC%96%E8%BE%91%E5%99%A8/JetBrain/</loc>
+         <loc>https://notes.complexpug.com/%E5%9F%BA%E7%A1%80%E5%B7%A5%E5%85%B7/%E7%BC%96%E8%BE%91%E5%99%A8/JetBrain/</loc>
          <lastmod>2024-05-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://note.complexpug.com/%E5%9F%BA%E7%A1%80%E5%B7%A5%E5%85%B7/%E7%BC%96%E8%BE%91%E5%99%A8/Sublime/</loc>
+         <loc>https://notes.complexpug.com/%E5%9F%BA%E7%A1%80%E5%B7%A5%E5%85%B7/%E7%BC%96%E8%BE%91%E5%99%A8/Sublime/</loc>
          <lastmod>2024-05-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://note.complexpug.com/%E5%9F%BA%E7%A1%80%E5%B7%A5%E5%85%B7/%E7%BC%96%E8%BE%91%E5%99%A8/Vim/</loc>
+         <loc>https://notes.complexpug.com/%E5%9F%BA%E7%A1%80%E5%B7%A5%E5%85%B7/%E7%BC%96%E8%BE%91%E5%99%A8/Vim/</loc>
          <lastmod>2024-05-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://note.complexpug.com/%E5%9F%BA%E7%A1%80%E5%B7%A5%E5%85%B7/%E7%BC%96%E8%BE%91%E5%99%A8/Vscode/</loc>
+         <loc>https://notes.complexpug.com/%E5%9F%BA%E7%A1%80%E5%B7%A5%E5%85%B7/%E7%BC%96%E8%BE%91%E5%99%A8/Vscode/</loc>
          <lastmod>2024-05-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://note.complexpug.com/%E5%9F%BA%E7%A1%80%E5%B7%A5%E5%85%B7/%E7%BC%96%E8%BE%91%E5%99%A8/note/</loc>
+         <loc>https://notes.complexpug.com/%E5%9F%BA%E7%A1%80%E5%B7%A5%E5%85%B7/%E7%BC%96%E8%BE%91%E5%99%A8/note/</loc>
          <lastmod>2024-05-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://note.complexpug.com/%E5%9F%BA%E7%A1%80%E5%B7%A5%E5%85%B7/%E8%BD%AF%E4%BB%B6/list/</loc>
+         <loc>https://notes.complexpug.com/%E5%9F%BA%E7%A1%80%E5%B7%A5%E5%85%B7/%E8%BD%AF%E4%BB%B6/list/</loc>
          <lastmod>2024-05-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://note.complexpug.com/%E5%9F%BA%E7%A1%80%E5%B7%A5%E5%85%B7/%E9%9D%99%E6%80%81%E7%BD%91%E9%A1%B5/hugo/</loc>
+         <loc>https://notes.complexpug.com/%E5%9F%BA%E7%A1%80%E5%B7%A5%E5%85%B7/%E9%9D%99%E6%80%81%E7%BD%91%E9%A1%B5/hugo/</loc>
          <lastmod>2024-05-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://note.complexpug.com/%E5%9F%BA%E7%A1%80%E5%B7%A5%E5%85%B7/%E9%9D%99%E6%80%81%E7%BD%91%E9%A1%B5/mkdocs/</loc>
+         <loc>https://notes.complexpug.com/%E5%9F%BA%E7%A1%80%E5%B7%A5%E5%85%B7/%E9%9D%99%E6%80%81%E7%BD%91%E9%A1%B5/mkdocs/</loc>
          <lastmod>2024-05-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://note.complexpug.com/%E6%95%B0%E6%8D%AE%E5%BA%93/note/</loc>
+         <loc>https://notes.complexpug.com/%E6%95%B0%E6%8D%AE%E5%BA%93/note/</loc>
          <lastmod>2024-05-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://note.complexpug.com/%E6%95%B0%E6%8D%AE%E5%BA%93/orm/mybatis/</loc>
+         <loc>https://notes.complexpug.com/%E6%95%B0%E6%8D%AE%E5%BA%93/orm/mybatis/</loc>
          <lastmod>2024-05-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://note.complexpug.com/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/note/</loc>
+         <loc>https://notes.complexpug.com/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/note/</loc>
          <lastmod>2024-05-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://note.complexpug.com/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/C%2B%2B/base/</loc>
+         <loc>https://notes.complexpug.com/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/C%2B%2B/base/</loc>
          <lastmod>2024-05-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://note.complexpug.com/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/C%2B%2B/gdb/</loc>
+         <loc>https://notes.complexpug.com/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/C%2B%2B/gdb/</loc>
          <lastmod>2024-05-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://note.complexpug.com/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/C%2B%2B/make/</loc>
+         <loc>https://notes.complexpug.com/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/C%2B%2B/make/</loc>
          <lastmod>2024-05-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://note.complexpug.com/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Go/note/</loc>
+         <loc>https://notes.complexpug.com/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Go/note/</loc>
          <lastmod>2024-05-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://note.complexpug.com/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Java/base/</loc>
+         <loc>https://notes.complexpug.com/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Java/base/</loc>
          <lastmod>2024-05-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://note.complexpug.com/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Java/%E7%AE%A1%E7%90%86%E6%9E%84%E5%BB%BA/maven/</loc>
+         <loc>https://notes.complexpug.com/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Java/%E7%AE%A1%E7%90%86%E6%9E%84%E5%BB%BA/maven/</loc>
          <lastmod>2024-05-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://note.complexpug.com/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/JavaScript/es6/</loc>
+         <loc>https://notes.complexpug.com/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/JavaScript/es6/</loc>
          <lastmod>2024-05-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://note.complexpug.com/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/JavaScript/note/</loc>
+         <loc>https://notes.complexpug.com/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/JavaScript/note/</loc>
          <lastmod>2024-05-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://note.complexpug.com/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/JavaScript/%E7%AE%A1%E7%90%86%E8%BF%90%E8%A1%8C/</loc>
+         <loc>https://notes.complexpug.com/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/JavaScript/%E7%AE%A1%E7%90%86%E8%BF%90%E8%A1%8C/</loc>
          <lastmod>2024-05-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://note.complexpug.com/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Lua/note/</loc>
+         <loc>https://notes.complexpug.com/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Lua/note/</loc>
          <lastmod>2024-05-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://note.complexpug.com/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Python/base/</loc>
+         <loc>https://notes.complexpug.com/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Python/base/</loc>
          <lastmod>2024-05-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://note.complexpug.com/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Python/package/</loc>
+         <loc>https://notes.complexpug.com/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Python/package/</loc>
          <lastmod>2024-05-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://note.complexpug.com/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Rust/note/</loc>
+         <loc>https://notes.complexpug.com/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Rust/note/</loc>
          <lastmod>2024-05-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://note.complexpug.com/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/note/</loc>
+         <loc>https://notes.complexpug.com/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/note/</loc>
          <lastmod>2024-05-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://note.complexpug.com/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/note/</loc>
+         <loc>https://notes.complexpug.com/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/note/</loc>
          <lastmod>2024-05-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://note.complexpug.com/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8E%9F%E7%90%86/note/</loc>
+         <loc>https://notes.complexpug.com/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8E%9F%E7%90%86/note/</loc>
          <lastmod>2024-05-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://note.complexpug.com/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/note/</loc>
+         <loc>https://notes.complexpug.com/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/note/</loc>
          <lastmod>2024-05-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://note.complexpug.com/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/note/</loc>
+         <loc>https://notes.complexpug.com/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/note/</loc>
          <lastmod>2024-05-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://note.complexpug.com/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/note/</loc>
+         <loc>https://notes.complexpug.com/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/note/</loc>
          <lastmod>2024-05-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://note.complexpug.com/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/note/</loc>
+         <loc>https://notes.complexpug.com/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/note/</loc>
          <lastmod>2024-05-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://note.complexpug.com/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/note/</loc>
+         <loc>https://notes.complexpug.com/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/note/</loc>
          <lastmod>2024-05-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://note.complexpug.com/%E8%BF%90%E7%BB%B4/docker/note/</loc>
+         <loc>https://notes.complexpug.com/%E8%BF%90%E7%BB%B4/docker/note/</loc>
          <lastmod>2024-05-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://note.complexpug.com/%E8%BF%90%E7%BB%B4/%E6%AD%A3%E5%88%99/note/</loc>
+         <loc>https://notes.complexpug.com/%E8%BF%90%E7%BB%B4/%E6%AD%A3%E5%88%99/note/</loc>
          <lastmod>2024-05-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
