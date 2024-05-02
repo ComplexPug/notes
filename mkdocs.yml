@@ -1,10 +1,10 @@
 site_name: ComplexPug's Notes
-site_url: https://note.complexpug.com/
-# edit_url: tree/master/docs
+site_url: https://notes.complexpug.com/
 site_description: ComplexPug's Notes
 copyright: Copyright &copy; 2021-2024 <a href="https://github.com/ComplexPug" target="_blank" rel="noopener">ComplexPug</a>
 repo_name: ComplexPug/notes
-repo_url: https://https://www.github.com/ComplexPug/notes/
+repo_url: https://www.github.com/ComplexPug/notes/
+
 
 theme:
   name: material # terminal

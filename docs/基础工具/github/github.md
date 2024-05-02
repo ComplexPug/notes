@@ -20,6 +20,7 @@ ai助手，感觉不如用gpt4
 链接到单行代码，直接点击对应行号即可
 
 SourceGraph: 实现函数跳转，比如查看对象的类文件。
+## GitHub Action
 
 ## Search
 [link](https://docs.github.com/zh/search-github/getting-started-with-searching-on-github/understanding-the-search-syntax)
