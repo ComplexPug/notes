@@ -1,0 +1,190 @@
+site_name: ComplexPug's Notes
+site_url: https://note.complexpug.com/
+# edit_url: tree/master/docs
+site_description: ComplexPug's Notes
+copyright: Copyright &copy; 2021-2024 <a href="https://github.com/ComplexPug" target="_blank" rel="noopener">ComplexPug</a>
+repo_name: ComplexPug/notes
+repo_url: https://https://www.github.com/ComplexPug/notes/
+
+theme:
+  name: material # terminal
+  language: 'zh'
+  icon: 
+    logo: material/notebook-outline
+  font:
+    code: Roboto Mono
+  palette: 
+    - media: "(prefers-color-scheme: light)" # 浅色
+      scheme: default
+      primary: white
+      accent: red
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)" # 深色
+      scheme: slate
+      primary: black
+      accent: blue
+      toggle:
+        icon: material/weather-night
+        name: Switch to light mode
+  features: # 功能  
+    - announce.dismiss # 可以叉掉公告的功能
+    - content.action.edit # 编辑按钮，似乎没啥用
+    - content.action.view # 查看按钮，似乎没啥用
+    - content.code.annotate # 代码注释，具体不清楚
+    - content.code.copy # 复制代码按钮
+    # - content.code.select # 选择代码按钮
+    # - content.tabs.link # 链接标签
+    - content.tooltips # 不太清楚呢这个
+    - header.autohide # 自动隐藏header
+    - navigation.expand # 默认展开导航栏
+    - navigation.footer # 底部导航栏
+    - navigation.indexes # 索引按钮可以直接触发文件，而不是只能点击其下属选项浏览，这个功能可以给对应的section提供很好的预览和导航功能
+    - navigation.instant # 瞬间加载 - 如果这个开着，那么语言切换后就会跳转至首页，所以我关掉了
+    - navigation.instant.prefetch # 预加载
+    - navigation.instant.progress # 进度条
+    - navigation.path # 导航路径， 目前好像没啥用
+    # - navigation.prune # 只构建可见的页面
+    - navigation.sections # 导航栏的section
+    - navigation.tabs # 顶级索引被作为tab
+    - navigation.tabs.sticky # tab始终可见
+    - navigation.top # 开启顶部导航栏
+    - navigation.tracking # 导航栏跟踪
+    - search.highlight # 搜索高亮
+    - search.share # 搜索分享
+    - search.suggest # 搜索建议
+    - toc.follow # 目录跟踪-页面右侧的小目录
+    - toc.integrate # 目录跟踪集成到左侧大目录中
+
+markdown_extensions: #推荐配置Markdown基本语法及其扩展
+  - admonition
+  - def_list
+  - footnotes
+  - meta
+  - toc:
+      permalink: false
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.caret
+  - pymdownx.critic
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_generator: !!python/name:pymdownx.emoji.to_svg
+  - pymdownx.highlight:
+      linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.magiclink
+  - pymdownx.mark
+  - pymdownx.snippets:
+      check_paths: true
+  - pymdownx.progressbar
+  - pymdownx.smartsymbols
+  - pymdownx.superfences:
+      custom_fences:
+        - name: math
+          class: arithmatex
+          format: !!python/name:pymdownx.arithmatex.fence_mathjax_format
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
+  - pymdownx.tabbed:
+      alternate_style: true
+
+extra:
+  social: # 社交媒体
+    - icon: fontawesome/solid/house
+      link: http://www.complexpug.com/
+    - icon: fontawesome/brands/github
+      link: https://github.com/ComplexPug
+
+nav:
+  - Home: 
+    - "index.md"
+  - 编程语言:
+    - C++: 
+      - 基础: "./编程语言/C++/base.md"
+      - GDB: "./编程语言/C++/gdb.md"
+      - 构建管理: "./编程语言/C++/make.md"
+    - Java:
+      - 基础: "./编程语言/Java/base.md"
+      - 构建管理:
+        - maven: "./编程语言/Java/管理构建/maven.md"
+    - Python:
+      - 基础: "./编程语言/Python/base.md"
+      - Package: "./编程语言/Python/package.md"  # 确认这个文件的位置和名称是否正确
+    - Lua: "./编程语言/Lua/note.md"
+    - Go: "./编程语言/Go/note.md"
+    - Rust: "./编程语言/Rust/note.md"
+    - JavaScript: 
+      - 基础: "./编程语言/JavaScript/note.md"
+      - ES6: "./编程语言/JavaScript/es6.md"
+      - 管理运行: "./编程语言/JavaScript/管理运行.md"
+  - 计算机科学:
+    - 操作系统: "./计算机科学/操作系统/note.md"
+    - 计算机网络: "./计算机科学/计算机网络/note.md"
+    - 计算机组成原理: "./计算机科学/计算机组成原理/note.md"
+    - 数据结构和算法: "./计算机科学/数据结构和算法/note.md"
+    - 软件工程: "./计算机科学/软件工程/note.md"
+    - 数据库原理: "./计算机科学/数据库原理/note.md"
+    - 编译原理: "./计算机科学/编译原理/note.md"
+    - 人工智能: "./计算机科学/人工智能/note.md"
+  - 基础工具:
+    - 写作:
+      - LaTeX:
+        - LaTeX-Base: "./基础工具/写作/LaTeX/base.md"
+        - Beamer: "./基础工具/写作/LaTeX/beamer.md"
+      - Markdown:
+        - 基础: "./基础工具/写作/Markdown/Markdown.md"
+    - 操作系统的日常:
+      - Windows: "./基础工具/操作系统/Windows/note.md"
+      - Linux: "./基础工具/操作系统/Linux/note.md"
+      - Macos: "./基础工具/操作系统/Linux/Macos/note.md"
+    - 静态网页:
+      - Hugo: "./基础工具/静态网页/hugo.md"
+      - Mkdocs: "./基础工具/静态网页/mkdocs.md"
+    - 编辑器:
+      - Abstract: "./基础工具/编辑器/note.md"
+      - Vim: "./基础工具/编辑器/Vim.md"
+      - Sublime: "./基础工具/编辑器/Sublime.md"
+      - Vscode: "./基础工具/编辑器/Vscode.md"
+      - JetBrain: "./基础工具/编辑器/JetBrain.md"
+    - 软件: "./基础工具/软件/list.md"
+    - 终端: 
+      - tmux终端复用器: "./基础工具/终端/tmux.md"
+    - git:
+      - Git:
+        - git: "./基础工具/git/git.md"
+        - git常见命令: "./基础工具/git/git常见命令.txt"
+        - git规范: "./基础工具/git/git规范.md"
+        - yxcgit: "./基础工具/git/yxc_git.md"
+      - GitHub:
+        - github: "./基础工具/git/github.md"
+        - CI:
+          - GithubAction: "./基础工具/git/CI/GithubAction.md"
+  - Web开发:
+    - Nginx: "./web开发/nginx/note.md"
+    - Vue: "./web开发/vue/note.md"
+    - JSON: "./web开发/json/note.md"
+  - 运维:
+    - 正则: "./运维/正则/note.md"
+    - Docker: "./运维/docker/note.md"
+  - 人工智能: "./人工智能/note.md"
+  - DevOps: "./DevOps/note.md"
+  - Books: "./Books/note.md"
+  - Other: "./Other/note.md"
+  - 数据库:
+    - note: "./数据库/note.md"
+    - ORM: 
+      - mybatis: "./数据库/orm/mybatis.md"
+  - Source Code:
+    - fastjson: "./Source Code/fastjson/note.md"
+    - netty: "./Source Code/netty/note.md"
+    - python: "./Source Code/python/note.md"
+    - Nginx: "./Source Code/Nginx/note.md"
+    - Redis: "./Source Code/Redis/note.md"
+    - Mkdocs: "./Source Code/mkdocs/note.md"
+    - Linux Kernel: "./Source Code/LinuxKernel/note.md"
+    - Minix: "./Source Code/Minix/note.md"
+  - Stack: "./Stack.md"
