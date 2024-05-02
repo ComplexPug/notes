@@ -29,33 +29,30 @@ theme:
         icon: material/weather-night
         name: Switch to light mode
   features: # 功能  
-    - announce.dismiss # 可以叉掉公告的功能
-    - content.action.edit # 编辑按钮，似乎没啥用
-    - content.action.view # 查看按钮，似乎没啥用
-    - content.code.annotate # 代码注释，具体不清楚
-    - content.code.copy # 复制代码按钮
+    # - content.action.edit # 编辑按钮，似乎没啥用
+    # - content.action.view # 查看按钮，似乎没啥用
+    # - content.code.annotate # 代码注释，具体不清楚
+    # - content.code.copy # 复制代码按钮
     # - content.code.select # 选择代码按钮
     # - content.tabs.link # 链接标签
-    - content.tooltips # 不太清楚呢这个
-    - header.autohide # 自动隐藏header
-    - navigation.expand # 默认展开导航栏
-    - navigation.footer # 底部导航栏
+    # - content.tooltips # 不太清楚呢这个
+    # - header.autohide # 自动隐藏header
+    # - navigation.expand # 默认展开导航栏
+    # - navigation.footer # 底部导航栏
     - navigation.indexes # 索引按钮可以直接触发文件，而不是只能点击其下属选项浏览，这个功能可以给对应的section提供很好的预览和导航功能
-    - navigation.instant # 瞬间加载 - 如果这个开着，那么语言切换后就会跳转至首页，所以我关掉了
     - navigation.instant.prefetch # 预加载
     - navigation.instant.progress # 进度条
     - navigation.path # 导航路径， 目前好像没啥用
     # - navigation.prune # 只构建可见的页面
-    - navigation.sections # 导航栏的section
+    # - navigation.sections # 导航栏的section
     - navigation.tabs # 顶级索引被作为tab
     - navigation.tabs.sticky # tab始终可见
-    - navigation.top # 开启顶部导航栏
+    # - navigation.top # 开启顶部导航栏
     - navigation.tracking # 导航栏跟踪
     - search.highlight # 搜索高亮
-    - search.share # 搜索分享
-    - search.suggest # 搜索建议
+    # - search.share # 搜索分享
+    # - search.suggest # 搜索建议
     - toc.follow # 目录跟踪-页面右侧的小目录
-    - toc.integrate # 目录跟踪集成到左侧大目录中
 
 markdown_extensions: #推荐配置Markdown基本语法及其扩展
   - admonition
@@ -101,8 +98,9 @@ extra:
 
 nav:
   - Home: 
-    - "index.md"
+    - index: "index.md"
   - 编程语言:
+    - 编程语言: "./编程语言/note.md"
     - C++: 
       - 基础: "./编程语言/C++/base.md"
       - GDB: "./编程语言/C++/gdb.md"
@@ -131,6 +129,7 @@ nav:
     - 编译原理: "./计算机科学/编译原理/note.md"
     - 人工智能: "./计算机科学/人工智能/note.md"
   - 基础工具:
+    - 基础工具: "./基础工具/note.md"
     - 写作:
       - LaTeX:
         - LaTeX-Base: "./基础工具/写作/LaTeX/base.md"
@@ -140,7 +139,7 @@ nav:
     - 操作系统的日常:
       - Windows: "./基础工具/操作系统/Windows/note.md"
       - Linux: "./基础工具/操作系统/Linux/note.md"
-      - Macos: "./基础工具/操作系统/Linux/Macos/note.md"
+      - Macos: "./基础工具/操作系统/Macos/note.md"
     - 静态网页:
       - Hugo: "./基础工具/静态网页/hugo.md"
       - Mkdocs: "./基础工具/静态网页/mkdocs.md"
@@ -160,9 +159,8 @@ nav:
         - git规范: "./基础工具/git/git规范.md"
         - yxcgit: "./基础工具/git/yxc_git.md"
       - GitHub:
-        - github: "./基础工具/git/github.md"
-        - CI:
-          - GithubAction: "./基础工具/git/CI/GithubAction.md"
+        - github: "./基础工具/github/github.md"
+        # - GithubAction: "./基础工具/github/GithubAction.md"
   - Web开发:
     - Nginx: "./web开发/nginx/note.md"
     - Vue: "./web开发/vue/note.md"

@@ -1,3 +1,5 @@
+# VsCode
+## ShortCut
 alt+z 对一行很长的字符，多行表示一行
 
 对于 行 的操作：
@@ -22,3 +24,12 @@ Ctrl+Shift+N
 Ctrl+Shift+W 关闭编辑器
 Ctrl + Home 跳转到页头
 Ctrl + End 跳转到页尾
+
+## Markdown的图片保存路径问题
+vscode在2023年的时候内置了快速粘贴剪切版的视频，图片。
+对于图片，如果想改变保存位置，需要到扩展里面的MarkDown里面修改Markdown › Copy Files: Destination。或者在setting.json加上，具体的一些路径宏在注释里面。
+```json
+"markdown.copyFiles.destination": {
+  "*.md": "${documentDirName}/.assert/${fileName}"
+}
+```
