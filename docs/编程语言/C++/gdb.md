@@ -138,14 +138,60 @@ return
 有人说：gdb的反向不好用，推荐[rr](https://github.com/rr-debugger/rr)。
 
 ## TUI
-### 快捷键
-CTRL x a 进入tui模式，小小的可视化吧。
+一般cmd窗口固定在下面只有一个。
+### 快捷键&&commands
+```shell
+tui enable/disable
+gdb -tui <filename>
+layout <window-name> # layout src
+fs <window-name> # focus 切换窗口
+winheight src +5 # 窗口大小使用winheight调节,单位：行数
+winheight src -4
+
+# 上下会是
+CTRL+p previous上一条命令
+CTRL+n next下一条命令
+CTRL+b back命令行光标前移
+CTRL+f forward命令行光标后移
+CTRL+x a 进入/退除tui模式。
+CTRL+x 1 显示一个窗口
+CTRL+x 2 显示两个窗口，多按切换(src,asm,src+asm,reg+src,reg+asm)
+CTRL+x o 切换窗口 <=> fs <window-name>
+CTRL+x s
 CTRL l 刷新tui模式
-CTRL x 1/2 打开1/2个窗口,多摁切换
 CTRL o 切换窗口
-tui reg float 
-### cgdb  
-一个开源项目，可能比TUI好用一点。
+tui reg float # 可以查看浮点寄存器，暂时还没搞懂和layout的区别，虽然用起来就是有区别。
+``` 
+### 窗口
+
+该模式下有五种窗口
+
+(cmd)command 命令窗口. 可以键入调试命令
+
+(src)source 源代码窗口. 显示当前行,断点等信息
+
+(asm)assembly 汇编代码窗口
+
+(reg)register 寄存器窗口
+
+split 源码和汇编混合窗口
+
+使用layout命令打开src/asm/reg/split窗口
+
+使用focus命令切换激活的窗口,可简写为fs
+
+### tui的标志
+`>` 表示当前运行地点
+断点表示 `[b|B][+|-]`
+
+b 表示还没到的断点
+
+B 表示至少到过一次的断点
+
++ 表示 enabled
+
+- 表示 disabled
+
 
 ## Core dump（核心转储）
 是指在程序运行过程中发生错误或异常时，操作系统将程序的内存内容保存到磁盘上的一种文件。这个文件包含了程序崩溃时的内存状态，包括变量的值、函数调用栈、寄存器状态等信息。通过分析 coredump 文件，可以了解程序崩溃的原因，以便进行调试和修复。

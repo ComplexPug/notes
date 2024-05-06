@@ -104,7 +104,7 @@ nav:
     - C++: 
       - 基础: "./编程语言/C++/base.md"
       - GDB: "./编程语言/C++/gdb.md"
-      - 构建管理: "./编程语言/C++/make.md"
+      - Make: "./编程语言/C++/make.md"
     - Java:
       - 基础: "./编程语言/Java/base.md"
       - 构建管理:
@@ -120,7 +120,13 @@ nav:
       - ES6: "./编程语言/JavaScript/es6.md"
       - 管理运行: "./编程语言/JavaScript/管理运行.md"
   - 计算机科学:
-    - 操作系统: "./计算机科学/操作系统/note.md"
+    - 操作系统:
+      - 并发: "./计算机科学/操作系统/并发/note.md"
+      - jyy2024:
+        - note: "./计算机科学/操作系统/jyy2024/note.md"
+      - 进程管理:
+        - 进程通信: "./计算机科学/操作系统/进程管理/进程通信.md"
+        - 死锁: "./计算机科学/操作系统/进程管理/死锁.md"
     - 计算机网络: "./计算机科学/计算机网络/note.md"
     - 计算机组成原理: "./计算机科学/计算机组成原理/note.md"
     - 数据结构和算法: "./计算机科学/数据结构和算法/note.md"
@@ -128,6 +134,8 @@ nav:
     - 数据库原理: "./计算机科学/数据库原理/note.md"
     - 编译原理: "./计算机科学/编译原理/note.md"
     - 人工智能: "./计算机科学/人工智能/note.md"
+    - CSAPP: 
+      - ch1: "./计算机科学/CSAPP/ch1.md"
   - 基础工具:
     - 基础工具: "./基础工具/note.md"
     - 写作:
@@ -138,7 +146,8 @@ nav:
         - 基础: "./基础工具/写作/Markdown/Markdown.md"
     - 操作系统的日常:
       - Windows: "./基础工具/操作系统/Windows/note.md"
-      - Linux: "./基础工具/操作系统/Linux/note.md"
+      - Linux:
+        - 命令: "./基础工具/操作系统/Linux/command.md"
       - Macos: "./基础工具/操作系统/Macos/note.md"
     - 静态网页:
       - Hugo: "./基础工具/静态网页/hugo.md"
@@ -150,7 +159,8 @@ nav:
       - Vscode: "./基础工具/编辑器/Vscode.md"
       - JetBrain: "./基础工具/编辑器/JetBrain.md"
     - 软件: "./基础工具/软件/list.md"
-    - 终端: 
+    - 终端:
+      - 命令: "./基础工具/终端/command.md"
       - tmux终端复用器: "./基础工具/终端/tmux.md"
     - git:
       - Git:
@@ -170,7 +180,6 @@ nav:
     - Docker: "./运维/docker/note.md"
   - 人工智能: "./人工智能/note.md"
   - DevOps: "./DevOps/note.md"
-  - Books: "./Books/note.md"
   - Other: "./Other/note.md"
   - 数据库:
     - note: "./数据库/note.md"

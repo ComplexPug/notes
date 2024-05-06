@@ -10,6 +10,10 @@ ctl+w+方向 切换页面
 ctrl+q（unix下也可以ctrl+v）进入visual block
 选中之后大写I插入输入#，再按Esc即可
 
+## 查看二进制文件
+`vim -b <filename>`
+`:%!xxd` 打开后输入，其实就是借助了`xxd`命令
+`:%!xxd -r` 写回。
 ## 寄存器reg
 reg 查看寄存器
 剪切板得支持clip+
@@ -24,9 +28,8 @@ nnoremap <C-p> "*p
 
 实现ssh远程复制到系统剪切板，此处用到 clipper，下图是其原理，简单来说就是远程通过socket/网络发到本地，本地再设置到系统剪切板。
 [link](https://www.cnblogs.com/gmpy/p/11177719.html)
-airline
 
-0.配置目录
+0. 配置目录
 linux下可以配置.vimrc，也可以在.vim里面创建vimrc
 
 1. 自动补齐括号
