@@ -1,60 +1,35 @@
-
+git branch -d <branch-name> 删除本地的git分支
+git branch --set-upstream-to origin/newbranch 与远程分支关联
+git branch -a 查看所有分支
+git branch -r 列出所有远程分支
+git branch 列出所有本地分支
+git branch -m <旧名字> <新名字> 修改分支名
+git branch [branch-name] 新建一个分支，但依然停留在当前分支
 
 本地仓库的代码还未被更新，此时：
-(1) 更新远程仓库的代码为最新的
-git fetch --all
-(2) 让本地代码与origin / master完全相同
-git reset --hard origin/master
+git fetch --all 更新远程仓库的代码为最新的
+git reset --hard origin/master 让本地代码与origin / master完全相同
 
-git branch -a	查看所有分支
-git branch -r	查看远程分支
-列 出 所 有 本 地 分 支
-git branch
-列 出 所 有 远 程 分 支
-git branch -r
+git checkout -b <branch> 新建一个分支，并切换到该分支
+git checkout -- <filenames> 撤销文件修改，回滚到暂存区或者HEAD（优先暂存区）。
+git checkout <branch-name>	切换到分支
+git checkout main 切换回main分支
+git checkout <commit-hashcode> /path/to/file git回滚文件到指定版
+git checkout HEAD^ /path/to/file 回滚到上一个版本
 
-新 建 一 个 分 支 ， 但 依 然 停 留 在 当 前 分 支
-git branch [branch-name]
-新 建 一 个 分 支 ， 并 切 换 到 该 分 支
-git checkout -b [branch]
-合 并 指 定 分 支 到 当 前 分 支
-git merge [branch]
-修改分支名
-git branch -m <旧名字> <新名字>
-删 除 分 支
-git branch -d [branch-name]
-删 除 远 程 分 支
+git merge [branch] 合并指定分支到当前分支
+
+删除远程分支
 git push origin --delete [branch-name] 
 git branch -dr [remote/branch]
 
-
-
-
-使用 git checkout 撤销本地修改
-checkout 就是撤销你的修改, 暂存区是会保留.
-# 撤销所有修改
-git checkout .
-# 撤销单个文件的修改
-git checkout readme.md
-
-
-
 git fetch	更新索引
-git checkout 分支名	切换到分支
-git checkout -b 本地分支名	在本地创建一个分支, 并切换到这个分支
 git reset –hard 6e52	回退到某个ID
 git add -u	将删除操作也添加到暂存区
 git rm –cached filename	将暂存区的文件移出暂存区
 
-
-
-git回滚一个文件到指定版
 根据commitid来回滚
 git log /path/to/file
-git checkout <commit-hashcode> /path/to/file
-
-回滚到上一个版本
-git checkout HEAD^ /path/to/file
 
 使用 git reset 回退项目版本
 git reflog查看命令历史
@@ -65,23 +40,17 @@ git reset --hard HEAD^
 添加关联的远程git仓库
 origin是远端的名字, 多个远端名字不能相同
 
-git remote add origin https://github.com/iuxt/test.git
-上传，并关联到master分支
-git push -u origin master
-合并代码
+git remote add origin https://github.com/iuxt/test.git 上传，并关联到master分支
+git push -u origin master 合并代码
 git checkout master
 git merge dev            # 将dev代码合并到master
 合并方式如果是fast-forward模式, 表示git只是切换了一下指针
 
 删除分支, 分支改名
-# 重命名本地分支
-git branch -m oldbranch newbranch
-# 删除远程分支
-git push --delete origin oldbranch
-# 将重命名后的分支推到远端
-git push origin newbranch
-# 与远程分支关联
-git branch --set-upstream-to origin/newbranch
+
+git push --delete origin oldbranch 删除远程分支
+git push origin newbranch 将重命名后的分支推到远端
+
 # 如果远程已经删除了分支, 本地还没更新, 可以使用
 git fetch -p
 rebase
@@ -116,23 +85,19 @@ git tag -d v0.1
 git push origin :refs/tags/v0.1
 
 
-2.git checkout -b xxx 切换至新分支xxx
 （相当于复制了remote的仓库到本地的xxx分支上
-4.git diff 查看自己对代码做出的改变
-5.git add 上传更新后的代码至暂存区
-6.git commit 可以将暂存区里更新后的代码更新到本地git
-7.git push origin xxx 将本地的xxxgit分支上传至github上的git
+git diff 查看自己对代码做出的改变
+git add 上传更新后的代码至暂存区
+git commit 可以将暂存区里更新后的代码更新到本地git
+git push origin xxx 将本地的xxxgit分支上传至github上的git
 -----------------------------------------------------------
 （如果在写自己的代码过程中发现远端GitHub上代码出现改变）
-1.git checkout main 切换回main分支
-2.git pull origin master(main) 将远端修改过的代码再更新到本地
-3.git checkout xxx 回到xxx分支
-4.git rebase main 我在xxx分支上，先把main移过来，然后根据我的commit来修改成新的内容
+git pull origin master(main) 将远端修改过的代码再更新到本地
+git rebase main 我在xxx分支上，先把main移过来，然后根据我的commit来修改成新的内容
 （中途可能会出现，rebase conflict -----》手动选择保留哪段代码）
-5.git push -f origin xxx 把rebase后并且更新过的代码再push到远端github上
+git push -f origin xxx 把rebase后并且更新过的代码再push到远端github上
 （-f ---》强行）
-6.原项目主人采用pull request 中的 squash and merge 合并所有不同的commit
+原项目主人采用pull request 中的 squash and merge 合并所有不同的commit
 ----------------------------------------------------------------------------------------------
 远端完成更新后
-1.git branch -d xxx 删除本地的git分支
 2.git pull origin master 再把远端的最新代码拉至本地

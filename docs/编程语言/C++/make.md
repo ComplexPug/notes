@@ -69,7 +69,7 @@ clean :
 构建make的工具
 
 ## 资料
-TODO [bilibili](https://www.bilibili.com/video/BV1gf4y1P7GX/?spm_id_from=333.788&vd_source=2ae0b3d86625359b9f3be85ab7c6e76e)
+- [ ] [bilibili](https://www.bilibili.com/video/BV1gf4y1P7GX/?spm_id_from=333.788&vd_source=2ae0b3d86625359b9f3be85ab7c6e76e)
 [GNU Make 使用手册（中译版）](https://file.elecfans.com/web1/M00/7D/E7/o4YBAFwQthSADYCWAAT9Q1w_4U0711.pdf)
 [A Short Introduction to Makefile](https://www3.nd.edu/~zxu2/acms60212-40212/Makefile.pdf)
 http://www.uinio.com/Linux/CMake/

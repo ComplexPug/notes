@@ -10,7 +10,7 @@
 
 ## 进程和线程
 在linux没有特意区分。所以线程看作轻量化进程
-TODO 自己写多线程貌似还是显示一个PID。
+- [ ] 自己写多线程貌似还是显示一个PID，为什么。
 
 ## link
 [systemd](https://bbs.huaweicloud.com/blogs/218845)
