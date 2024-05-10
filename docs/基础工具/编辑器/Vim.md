@@ -1,5 +1,8 @@
 忘记但常用的快捷键
 
+Q:修改配置的时候忘记sudo了，保存的时候才发现readonly
+A:`:w !sudo tee % > /dev/null`
+
 /key-word\c
 
 %s/str1/str2 替换

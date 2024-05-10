@@ -68,5 +68,8 @@ vscode自带的 运行与调试。
 
 相对于gdb确实友好很多。
 
+### 死循环
+gdb attach附加
+
 ## link
 [hanzuxiaozi](https://www.bilibili.com/video/BV1Aj411N7Ne/?vd_source=2ae0b3d86625359b9f3be85ab7c6e76e)

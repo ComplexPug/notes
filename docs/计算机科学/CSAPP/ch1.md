@@ -32,3 +32,6 @@
 ```
 objdump -d main.o
 ```
+
+## todo
+TODO 链接的是哪些文件，单文件ld的时候又加了什么东西。

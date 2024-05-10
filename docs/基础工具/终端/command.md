@@ -19,6 +19,11 @@ if [ $(id -u) != "0" ]; then
     echo "Error: You must be root to run this script, please use root to install lnmp"
     exit 1
 fi
+
+`|` 管道
+`;` 当你想要无条件地顺序执行多个命令。
+`&&` 当你希望只在前一个命令成功时才执行下一个命令。
+`&` 后台执行    
 ```
 
 问题：有些命令在换zsh之后失效了。

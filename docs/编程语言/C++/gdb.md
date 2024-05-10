@@ -1,5 +1,7 @@
 # [GDB](https://www.sourceware.org/gdb/)
-go,c,c++,rust都可以用
+断点调试的工具
+## more lean after over
+死锁也可以使用gdb调试
 ## 语法
 
 ### 使用调试符号编译程序
@@ -12,48 +14,46 @@ go,c,c++,rust都可以用
 `l(or list) [<line number> or <function name>]` 打印最近的10行代码
 
 ### 断点
-`b(or break)  [filename:] <line number> or <function name>`
+种类：breakpoint，conditional breakpoint，watch point
+### bt and conditional bt
+`break <location>`
+> Locations can be memory addresses ("*0x7c00") or names ("mon_backtrace", "monitor.c:71").
 `b +<number>` 当前行+number
-`b *(memory address)`
-`b <...> if condition`
+`b <location> if <condition>`
 `d(or delete) <break-number>` 也可以删除display
+> Modify breakpoints using delete, disable, enable.
+`cond(or condition) <bt-id> <condition>` 为已经添加的断点加条件
 
-break（简写b）是我们最熟悉的。
-tbreak（简写tb）：临时断点，也就是触发一次后自动消失。与break用法相同。
-hbreak（简写hb）：硬件断点。对我们来说没什么用。
-rbreak（简写rb）：根据正则表达式设置断点。用法：rbreak [正则表达式]。
+`disable(or dis) <type> [id]`
+临时禁用某些类型的对应编号的东西。
+
+`delete(or d) <type> [id]`
+删除某些类型的对应编号的东西。
+
+`enable(or en) <type> [id]`
+启用某些类型的对应编号的东西。
+
+break（or b）是我们最熟悉的。
+tbreak（or tb）：临时断点，也就是触发一次后自动消失。与break用法相同。
+hbreak（or hb）：硬件断点。对我们来说没什么用。
+rbreak（or rb）：根据正则表达式设置断点。用法：rbreak [正则表达式]。
 `Example: rbreak dfs* ，由于dfs1与dfs2均匹配，所以这两个函数均会被加上断点`
 
-命令：disable（简写为dis）
-格式：disable 类型 [编号]
-作用：临时禁用某些类型的对应编号的东西，待会儿讲。
-
-命令：delete（简写为d）
-格式：delete 类型 [编号]
-作用：删除某些类型的对应编号的东西。
-
-命令：enable（简写为en）
-格式：enable 类型 [编号]
-作用：启用某些类型的对应编号的东西。
-
-condition
-`用法：condition [断点编号] [条件]。condition可缩写为cond。`
-效果：触发断点时，只有指定的条件为真时才停下。
-
-commands（简写为comm）可以在触发某个（或多个）断点的时候运行指定gdb命令。
+commands（or comm）可以在触发某个（或多个）断点的时候运行指定gdb命令。
 `用法：commands [断点编号1] [断点编号2] ...`
 之后，它会让你逐行输入要指定的gdb命令。
 在到你指定的断点时，他都会逐行运行你之前输入的命令。
 
 用法：watch/rwatch/awatch [变量名]
 作用：监视指定变量。
-watch（简写wa）：当指定变量被写时停下。
-rwatch（简写rwa）：当指定变量被读时停下。
-awatch（简写awa）：当指定变量被读/写时停下。
+`watch -l <address>` or `watch <expression>`
+watch（简写wa）：当指定变量值改变了停下（如果x+y，则只看值不看变量）。
+rwatch（简写rwa）：当指定变量被读时停下（当exprission时候，看表达式的变量变化）。
+awatch（简写awa）：当指定变量被读/写时停下（同awatch）。
 
 
 有时候，我们要复现某个bug，这个时候，我们可以创建一个快照，即checkpoint。
-命令：checkpoint（可简写为ch）
+命令：checkpoint（or ch）
 用法：无参数。
 效果：创建一个快照，包含当前调试的所有信息。同时会输出这个checkpoint的信息，就像这样：
 checkpoint 1: fork returned pid 2577.
@@ -67,11 +67,14 @@ checkpoint 1: fork returned pid 2577.
 `set <aur> = <value>`
 
 ### 输出变量
-`p(or print) <var-name>` 打印一次变量
+`p(or print) <var-name>` 打印一次变量`p *((struct elfhdr *) 0x10000)`
 `disp(or display) <var-name>` 监控变量
 `d disp <disp-number>`
+`x/i <address>` 打印地址的汇编
+`x/x <address>` 打印地址的16进制    
+`x/10x <address>` 打印10个
 ### 打印调试信息
-`info stack/locals/b/disp` 
+`info stack/locals/b/disp/frame/registers` 
 `bt(or breaktrace)` 查看栈帧
     up/down [num] 往栈顶/栈底移动num帧。num默认为1。
     frame [num] 切换到第num帧。frame简写为f。num默认为0
@@ -81,9 +84,12 @@ checkpoint 1: fork returned pid 2577.
 ### 运行程序
 `r(or run)` 从头运行程序
 `c(or continue) [number]` 运行到下一个断点
+`advance <location>` 运行代码直到指令指针到达指定位置。
 `u(or until) number`  运行到指定行号停止
 `n(or next) [number]`  单步执行。若当前行有函数调用，则把这个函数作为一个整体执行（即不进入函数内部）。若给出参数 n，则执行 n 步。
 `s(or step) [number]` 单步执行。若当前行有函数调用，则进入该函数内部。若给出参数 n，则执行 n 步。
+`ni` 汇编为一行
+`si` 汇编为一行
 单步执行遇到断点结束
 `fin(or finish)` 执行到函数返回
 
@@ -138,6 +144,7 @@ return
 有人说：gdb的反向不好用，推荐[rr](https://github.com/rr-debugger/rr)。
 
 ## TUI
+curses UI
 一般cmd窗口固定在下面只有一个。
 ### 快捷键&&commands
 ```shell
@@ -192,6 +199,8 @@ B 表示至少到过一次的断点
 
 - 表示 disabled
 
+## help
+简洁明了，可以方便查找命令
 
 ## Core dump（核心转储）
 是指在程序运行过程中发生错误或异常时，操作系统将程序的内存内容保存到磁盘上的一种文件。这个文件包含了程序崩溃时的内存状态，包括变量的值、函数调用栈、寄存器状态等信息。通过分析 coredump 文件，可以了解程序崩溃的原因，以便进行调试和修复。
@@ -225,7 +234,6 @@ sudo sysctl -w kernel.core_pattern=yourpath/core.%e.%p.%h.%t  # # 也可以使�
 %h: hostname
 %e: executable filename
 ```
-
 ### 调试
 `gdb a.out core`进行调试
 
@@ -234,3 +242,6 @@ sudo sysctl -w kernel.core_pattern=yourpath/core.%e.%p.%h.%t  # # 也可以使�
 
 
 如果最后报出的信息是系统库，则可以在gdb下输入bt来调出堆栈信息，如果是多线程，则输入thread apply all backtrace 来显示所有线程栈回溯.
+
+## link
+[mit 6.828](https://pdos.csail.mit.edu/6.828/2019/lec/gdb_slides.pdf)
