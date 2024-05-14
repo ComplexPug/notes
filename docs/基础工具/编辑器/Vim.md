@@ -3,6 +3,12 @@
 Q:修改配置的时候忘记sudo了，保存的时候才发现readonly
 A:`:w !sudo tee % > /dev/null`
 
+`ls | vim - ` 输出输入到vim
+
+`:%!grep key` 过滤
+
+`set nowrap` 一行溢出的策略：不换行或者换行
+
 /key-word\c
 
 %s/str1/str2 替换

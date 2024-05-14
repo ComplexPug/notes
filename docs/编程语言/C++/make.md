@@ -65,6 +65,11 @@ clean :
     rm app main.o kbd.o \
     command.o
 ```
+## command
+```shell
+make -nB <name> # n输出命令（不执行）B强制更新 
+```
+
 ## cmake
 构建make的工具
 

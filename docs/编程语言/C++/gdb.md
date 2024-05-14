@@ -237,6 +237,9 @@ sudo sysctl -w kernel.core_pattern=yourpath/core.%e.%p.%h.%t  # # 也可以使�
 ### 调试
 `gdb a.out core`进行调试
 
+### .gdbinit
+默认初始化参数，需要保存到用户目录下
+
 ### 注意
 如果程序是在docker中运行的，记得启动docker的时候加上--privileged 参数，该参数让 container内的root拥有真正的root权限。否则，container内的root只是外部的一个普通用户权限。privileged启动的容器，可以看到很多host上的设备，并且可以执行mount。甚至允许你在docker容器中启动docker容器。
 

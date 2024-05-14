@@ -8,12 +8,16 @@
 kernel，user，和一个mkfs
 mkfs里面有一个`mkfs.c`,make file system
 - [ ] 为什么这里独立出来了呢，而不是放到kernel里面
-## GDB
+`ls.c ls.asm ls.o _ls` 源代码的几个阶段
+`ls.d`是gcc生成的引用的头文件信息，用于make处理依赖
+`ls.sym`
 ```
+## GDB
+```shell
 # 第一个 terminal
 cd xv6-labs-2023
 # 第一次执行 gdb 需要 执行 下面条语句 
-echo "add-auto-load-safe-path $(pwd)/.gdbinit " >> ~/.gdbinit # 第一次执行
+echo "add-auto-load-safe-path $(pwd)/.gdbinit " >> ~/.gdbinit # 第一次执行，保存gdb初始配置
 
 make CPUS=1 qemu-gdb # 开了个端口可以进行gdb调试
 
@@ -21,6 +25,46 @@ make CPUS=1 qemu-gdb # 开了个端口可以进行gdb调试
 cd xv6-labs-2023
 gdb-multiarch
 ```
+## 测试
+```
+./grade-lab-util sleep
+```
+
+## Vscode
+最好是新开一个配置，不然太多插件有点乱。
+安装了clangd和clangd插件，可以正常跳转,但有些地方还是报错的。
+bear生成compile_commands.json就可以了`make clean && bear -- make qemu`。 这里我好像没起作用。
+在xv6目录下执行make clean && bear -- make qemu ，将会生成一个 compile_commands.json
+将 compile_commands.json 移动到 .vscode目录下
+在.vscode目录下新建c_cpp_properties.json文件
+```
+{
+  "configurations": [
+      {
+          "name": "Linux",
+          // "includePath": [],
+          // "defines": [],
+          // "compilerPath": "/usr/bin/riscv64-linux-gnu-gcc",
+          // "cStandard": "gnu17",
+          "intelliSenseMode": "${default}",
+          "compileCommands": "${workspaceFolder}/.vscode/compile_commands.json"
+          // "configurationProvider": "ms-vscode.makefile-tools"
+      }
+  ],
+  "version": 4
+}
+```
+clangd-format
+
+对于在vscode debug，可以attach到gdb。
+也可以luanch再配置一遍。
+
+## gcc的作用
+在代码里面不会有gcc的库，比如`<stdio.h>`，所有的函数都是自己实现的。
+gcc在这里就是纯粹的编译器，编译二进制和汇编代码。
+- [] 链接用没用有待商讨
+
+对于想打断点的程序，需要打开，即`-exec file ./user/_ls`才能调试（不然gdb不知道）。
 ## SystemCall tables
 | function name             | description                     |
 | :-----------:             | :---------:                    |  
