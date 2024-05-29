@@ -1,1 +1,3 @@
-# Add your notes here
+# Algorithms
+## Problems
+1.为什么根据前序和后序遍历不能得到唯一的树：可以是左右儿子，也可以是单独一个儿子，不能保证儿子非空。 

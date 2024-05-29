@@ -25,6 +25,9 @@ Ctrl+Shift+W 关闭编辑器
 Ctrl + Home 跳转到页头
 Ctrl + End 跳转到页尾
 
+## 自动执行项目任务
+为常见工作流创建任务，并享受运行脚本和自动检查结果的集成体验。
+
 ## Markdown的图片保存路径问题
 vscode在2023年的时候内置了快速粘贴剪切版的音视频，图片。
 对于图片，如果想改变保存位置，需要到扩展里面的MarkDown里面修改Markdown › Copy Files: Destination。或者在setting.json加上，具体的一些路径宏在注释里面。
@@ -51,7 +54,7 @@ vscode自带的 运行与调试。
 
 ![alt text](img/image.png)
 
-断点是可以动态加的好吧。
+断点是可以动态加的。
 
 1. Continue 继续: 运行到下一个断点
 2. Step Over 步进：不会进入函数，直接得到返回值 
@@ -70,6 +73,9 @@ vscode自带的 运行与调试。
 
 ### 死循环
 gdb attach附加
+
+## problem
+c++插件里面的Intelli Sense Engine Fallback打开。
 
 ## link
 [hanzuxiaozi](https://www.bilibili.com/video/BV1Aj411N7Ne/?vd_source=2ae0b3d86625359b9f3be85ab7c6e76e)

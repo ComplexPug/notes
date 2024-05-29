@@ -33,3 +33,8 @@ int j;       //声明并定义
 `void*`指针，存放任意对象的指针。
 
 `**p ***p`分别是指向指针的指针和只想指针的指针的指针    
+
+## 2.4
+### 2.4.2 const and pointer
+![alt text](img/image-1.png)
+从右向左看，curErr右边最近的是const，所以是常量指针，然后星号左边是int，指向的是int，所以是个指向int的常量指针。

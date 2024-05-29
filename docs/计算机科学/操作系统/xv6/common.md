@@ -3,13 +3,26 @@
 2020的lab貌似跑不动，这里跑2023的吧，看着区别不是很大。
 查看进程（类似`ps`）使用`ctrl + p`
 退出qemu `ctrl+a x`
-- [ ] main(int argc, char *argv[]) :argc是argv的长度
+
+## 构建日志
+打印的是构建命令，mkfs（用来构建磁盘文件fs.img，还有对磁盘的分块初始化）和qemu命令。
+
+之后就启动了。
+
 ## 文件结构
+
 kernel，user，和一个mkfs
+
 mkfs里面有一个`mkfs.c`,make file system
-- [ ] 为什么这里独立出来了呢，而不是放到kernel里面
+
+- [x] 为什么这里独立出来了呢，而不是放到kernel里面 
+
+> 如果是fs确实在kernel里面(kernel/fs.c),但没有理解他的功能，因为它并不是一个fs，make fs，他是构建fs.img的，代码并不会在xv6中运行。
+
 `ls.c ls.asm ls.o _ls` 源代码的几个阶段
+
 `ls.d`是gcc生成的引用的头文件信息，用于make处理依赖
+
 `ls.sym`
 ```
 ## GDB
@@ -107,3 +120,7 @@ $ ulimit -n
 sol:错误的，其实看到的是栈的地址，栈比较靠大段所以就看很大了。
 - [x] gdb的pc显示了48位，但其实他是64位寄存器，线程的为什么是40位倒是不知道，估计是省略前导0了。
 - [x] elf格式是什么格式:是二进制执行文件，a.o a.out a.so 就可以看到是一种elf文件( 可重定位文件relocatable,可执行文件executable,共享文件shared object动态库)。
+- [ ] 为什么fd0他就能向屏幕输出
+- [ ] ulimt的dump core是和文件相关的吗。
+- [x] xv6的trapframe和context为什么不一样。
+因为context的目的是保存进程以便恢复，只需要最小限度的保存，trapframe则需要完整的保存以便恢复中断时候的状态。

@@ -34,7 +34,7 @@ git log /path/to/file
 使用 git reset 回退项目版本
 git reflog查看命令历史
 git reset --hard <commit-hashcode>
-git reset --hard HEAD^
+    git reset --hard HEAD^
 
 
 添加关联的远程git仓库
