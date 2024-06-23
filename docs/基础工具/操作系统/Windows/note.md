@@ -22,6 +22,8 @@ systeminfo
 然后进入tun模式添加的显卡，邮件属性，进入共享选项卡，开启共享，同时指定网卡为上面新添加的网卡即可。
 
 ## windows subsystem for linux
+### 存储位置
+C:\Users\<name>\Appdata\package\can.....\
 ### 快捷键
 全屏:F11 or alt+shift
 分屏：不如tmux

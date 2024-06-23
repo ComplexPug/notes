@@ -22,7 +22,7 @@ main
 ## 配置
 1.配置用户信息
     git config --global user.name "your name"
-    git config --globla user.email "name@abc.com"
+    git config --global user.email "name@abc.com"
     发现user.name有多个值:
     git config --global --replace-all user.email "输入你的邮箱" 
     git config --global --replace-all user.name "输入你的用户名"
