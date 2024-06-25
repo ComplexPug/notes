@@ -25,6 +25,8 @@ systeminfo
 这个蛮怪的。首先vpn关闭，然后打开自动设置代理。
 
 ## windows subsystem for linux
+### 存储位置
+C:\Users\<name>\Appdata\package\can.....\
 ### 快捷键
 全屏:F11 or alt+shift
 分屏：不如tmux

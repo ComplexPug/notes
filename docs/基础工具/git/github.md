@@ -7,7 +7,7 @@ GitHub Actions自动化平台，Github Pages，Security。
 ## pricing
 开源!=免费，GitHub也是有很多收费项目的。Copilot，Team账户，Codespaces。
 ## Codespaces
-在线ide，在仓库里面点击.就可以进入。
+在线ide，在仓库里面点击.就可以快速创建。
 ## Copilot
 ai助手，感觉不如用gpt4
 ## pages
