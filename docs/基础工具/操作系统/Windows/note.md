@@ -21,6 +21,9 @@ systeminfo
 
 然后进入tun模式添加的显卡，邮件属性，进入共享选项卡，开启共享，同时指定网卡为上面新添加的网卡即可。
 
+## Microsoft Store can't access network
+这个蛮怪的。首先vpn关闭，然后打开自动设置代理。
+
 ## windows subsystem for linux
 ### 快捷键
 全屏:F11 or alt+shift
