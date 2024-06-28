@@ -1,0 +1,119 @@
+<snippet>
+    <content><![CDATA[
+namespace Lengauer_Tarjan
+{
+    struct Edge
+    {
+        int v, x;
+        Edge(int _v = 0, int _x = 0)
+        {
+            v = _v, x = _x;
+        }
+    };
+    /*====================*/
+    int n, m;
+    Edge edge[M * 3]; int head[3][N], tot;
+    int idx[N], dfn[N], dfc;
+    int fa[N], fth[N], mn[N], idm[N], sdm[N];
+    /*====================*/
+    void Add(int x, int u, int v)
+    {
+        edge[head[x][u] = ++tot] = Edge(v, head[x][u]);
+    }
+    void Add(int u, int v)
+    {
+        Add(0, u, v); Add(1, v, u);
+    }
+    void DFS(int u)
+    {
+        idx[dfn[u] = ++dfc] = u;
+        for (int i = head[0][u]; i; i = edge[i].x)
+        {
+            int v = edge[i].v;
+            if (!dfn[v])
+            {
+                DFS(v), fth[v] = u;
+            }
+        }
+    }
+    int Find(int x)
+    {
+        if (fa[x] == x)
+        {
+            return x;
+        }
+        int tmp = fa[x];
+        fa[x] = Find(fa[x]);
+        if (dfn[sdm[mn[tmp]]] < dfn[sdm[mn[x]]])
+        {
+            mn[x] = mn[tmp];
+        }
+        return fa[x];
+    }
+    void Tarjan(int st)
+    {
+        DFS(st);
+        for (int i = 1; i <= n; ++i)
+        {
+            fa[i] = sdm[i] = mn[i] = i;
+        }
+        for (int i = dfc; i >= 2; --i)
+        {
+            int u = idx[i], res = INF;
+            for (int j = head[1][u]; j; j = edge[j].x)
+            {
+                int v = edge[j].v; Find(v);
+                if (dfn[v] < dfn[u])
+                {
+                    res = min(res, dfn[v]);
+                }
+                else
+                {
+                    res = min(res, dfn[sdm[mn[v]]]);
+                }
+            }
+            sdm[u] = idx[res];
+            fa[u] = fth[u];
+            Add(2, sdm[u], u);
+            u = fth[u];
+            for (int j = head[2][u]; j; j = edge[j].x)
+            {
+                int v = edge[j].v; Find(v);
+                if (sdm[mn[v]] == u)
+                {
+                    idm[v] = u;
+                }
+                else
+                {
+                    idm[v] = mn[v];
+                }
+            }
+            head[2][u] = 0;
+        }
+        for (int i = 2; i <= dfc; ++i)
+        {
+            int u = idx[i];
+            if (idm[u] != sdm[u])
+            {
+                idm[u] = idm[idm[u]];
+            }
+        }
+    }
+    /*====================*/
+    void Init(int s)
+    {
+        Tarjan(s);
+        tot = dfc = 0;
+        for (int i = 1; i <= n; ++i)
+        {
+            dfn[i] = head[0][i] = head[1][i] = head[2][i] = 0;
+        }
+    }
+    //树上连边idm[i] -> i;
+}
+]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+    <tabTrigger>Lengauer_Tarjan</tabTrigger>
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <scope>source.c++</scope>
+</snippet>

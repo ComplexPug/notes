@@ -1,0 +1,76 @@
+<snippet>
+	<content><![CDATA[
+#include <bits/stdc++.h>
+using namespace std;
+const int N=1e4+7,M=1e5+7,inf=0x3f3f3f3f;
+int read() {
+    int x=0,f=1;char s=getchar();
+    for(;s>'9'||s<'0';s=getchar()) if(s=='-') f=-1;
+    for(;s>='0'&&s<='9';s=getchar()) x=x*10+s-'0';
+    return x*f;
+}
+int n,m,S,T;
+struct node {
+    int v,nxt,cap;
+}e[M<<3];
+int head[N],tot=1;
+void add(int u,int v,int cap) {
+    e[++tot].v=v;
+    e[tot].cap=cap;
+    e[tot].nxt=head[u];
+    head[u]=tot;
+}
+int dis[N];
+bool bfs() {
+    memset(dis,-1,sizeof(dis));
+    queue<int> q;
+    q.push(S);
+    dis[S]=0;
+    while(!q.empty()) {
+        int u=q.front();
+        q.pop();
+        for(int i=head[u];i;i=e[i].nxt) {
+            int v=e[i].v;
+            if(dis[v]==-1&&e[i].cap) {
+                dis[v]=dis[u]+1;
+                q.push(v);
+            }
+        }
+    }   
+    return dis[T]!=-1;
+}
+int dfs(int u,int f) {
+    if(u==T) return f;
+    int rest=f;
+    for(int i=head[u];i;i=e[i].nxt) {
+        int v=e[i].v;
+        if(dis[v]==dis[u]+1&&e[i].cap&&rest) {
+            int t=dfs(v,min(e[i].cap,rest));
+            if(!t) dis[v]=0;
+            e[i].cap-=t;
+            e[i^1].cap+=t;
+            rest-=t;
+        }
+    }
+    return f-rest;
+}
+int dinic() {
+    int ans=0;
+    while(bfs()) ans+=dfs(S,inf);
+    return ans;
+}
+int main() {
+    n=read(),m=read(),S=read(),T=read();
+    for(int i=1;i<=m;++i) {
+        int u=read(),v=read(),cap=read();
+        add(u,v,cap),add(v,u,0);
+    }
+    printf("%d\n",dinic());
+    return 0;
+}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>dinic</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.c++</scope>
+</snippet>

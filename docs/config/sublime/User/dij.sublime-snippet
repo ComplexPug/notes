@@ -1,0 +1,42 @@
+<snippet>
+	<content><![CDATA[
+struct edge {
+    int v,q,nxt;
+}e[_];
+int head[_],tot;
+void add(int u,int v,int q) {
+    e[++tot].v=v;
+    e[tot].q=q;
+    e[tot].nxt=head[u];
+    head[u]=tot;
+}
+int n,m,S,dis[_];
+struct node {
+    int x,y;
+    bool operator < (const node& a) const {
+        return y>a.y;
+    }
+};
+void dij() {
+    for(int i=1;i<=n;++i) dis[i]=0x3f3f3f3f;
+    priority_queue<node> q;
+    dis[S]=0;
+    q.push((node){S,0});
+    while(!q.empty()) {
+        node u=q.top();q.pop();
+        if(u.y!=dis[u.x]) continue;
+        for(int i=head[u.x];i;i=e[i].nxt) {
+            int v=e[i].v;
+            if(dis[v]>dis[u.x]+e[i].q) {
+                dis[v]=dis[u.x]+e[i].q;
+                q.push((node){v,dis[v]});
+            }
+        }
+    }
+}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>dij</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.c++</scope>
+</snippet>

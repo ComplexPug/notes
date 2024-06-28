@@ -1,0 +1,28 @@
+<snippet>
+	<content><![CDATA[
+namespace TREE {
+    #define ls(x) e[x].l
+    #define rs(x) e[x].r
+    struct node {int l,r,siz;}e[_*32];
+    int cnt;
+    void insert(int l,int r,int L,int x,int &y) {
+        e[y=++cnt]=e[x];
+        e[y].siz++;
+        if(l==r) return;
+        int mid=(l+r)>>1;
+        if(L<=mid) insert(l,mid,L,ls(x),ls(y));
+        else insert(mid+1,r,L,rs(x),rs(y));
+    }
+    int query(int l,int r,int k,int x,int &y) {
+        if(l==r) return l;
+        int mid=(l+r)>>1,w=e[ls(y)].siz-e[ls(x)].siz;
+        if(k<=w) return query(l,mid,k,ls(x),ls(y));
+        else return query(mid+1,r,k-w,rs(x),rs(y));
+    }
+}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>TREE</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.c++</scope>
+</snippet>

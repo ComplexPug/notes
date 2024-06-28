@@ -1,0 +1,27 @@
+<snippet>
+	<content><![CDATA[
+#include<iostream>  
+#include<windows.h>  
+using namespace std;  
+int main()  {  
+    int js=0;
+    system("g++ -g data.cpp -o data.exe -std=c++17");
+    system("g++ -g std.cpp -o std.exe -std=c++17");
+    system("g++ -g a.cpp -o a.exe -std=c++17");
+    while(233) {   
+        system("data.exe > data.in");  
+        system("a.exe < data.in > a.out");  
+        system("std.exe < data.in > std.out");  
+        printf("%d: \n", js++);
+        if(system("fc a.out std.out"))   {
+            cout<<"error";break;
+        }  
+    }
+    return 0;  
+}  
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>duipai</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.c++</scope>
+</snippet>

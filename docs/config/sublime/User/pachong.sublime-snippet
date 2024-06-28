@@ -1,0 +1,16 @@
+<snippet>
+	<content><![CDATA[
+import requests
+import json
+if __name__ == '__main__':
+	requests.encoding = "utf-8"
+	url = ''
+	headers = {
+		'User-Agent':'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/105.0.0.0 Safari/537.36'
+	}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>pachong</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.python</scope>
+</snippet>

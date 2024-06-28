@@ -1,0 +1,41 @@
+<snippet>
+	<content><![CDATA[
+int w[_],belong[_];
+int stak[_],vis[_],top,dfn[_],low[_],cnt;
+void tarjan(int u) {
+    low[u]=dfn[u]=++cnt;
+    vis[u]=1;
+    stak[++top]=u;
+    for(int i=head[u]; i; i=e[i].nxt) {
+        int v=e[i].v;
+        if(!dfn[v]) {
+            tarjan(v);
+            low[u]=min(low[u],low[v]);
+        } else if(vis[v])
+            low[u]=min(low[u],dfn[v]);
+    }
+    if(low[u]==dfn[u]) {
+        ++col;
+        while(stak[top]!=u) {
+            vis[stak[top]]=0;
+            q[col]+=w[stak[top]];
+            belong[stak[top]]=col;
+            top--;
+        }
+        top--;
+        belong[u]=col;
+        q[col]+=w[u];
+        vis[u]=0;
+    }
+}
+int main() {
+    for(i,1,n)
+        if(!dfn[i])
+            tarjan(i);
+}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>tarjan</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.c++</scope>
+</snippet>

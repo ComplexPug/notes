@@ -1,0 +1,35 @@
+<snippet>
+	<content><![CDATA[
+#include <bits/stdc++.h>
+#define ll long long
+#define FOR(i,a,b) for(ll i=a;i<=b;++i)
+using namespace std;
+const ll _=4e5+7;
+int a[_];
+mt19937 rng(time());
+int main() {
+    #ifdef ONLINE_JUDGE
+    #else
+        // freopen("a.in","r",stdin);
+        // freopen("a.in","w",stdout);
+    #endif
+    // srand(time(NULL));
+    int T=1;
+    cout<<T<<"\n";
+    while(T--) {
+        
+        // int n=10;
+        // vector<int> a(n);
+        // random_shuffle(a.begin(),a.end());
+        // for(auto x:a) {
+        //     cout<<x<<"\n";
+        // }
+    }
+    return 0;
+}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>data</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.c++</scope>
+</snippet>

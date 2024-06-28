@@ -1,0 +1,40 @@
+<snippet>
+	<content><![CDATA[
+namespace ODT {
+    struct node {
+        int l, r;
+        mutable int v;
+        node(int l, int r = 0, int v = 0) : l(l), r(r), v(v) {}
+        bool operator<(const node &a) const {return l < a.l;}
+    };
+    #define It set<node>::iterator
+    set<node> S;
+    It split(int pos) {
+        //以pos去做切割，找到一个包含pos的区间，把它分成[l,pos-1],[pos,r]两半
+        It it = S.lower_bound(node(pos));
+        if (it != S.end() && it->l == pos) return it;
+        it--;
+        if (it->r < pos) return S.end();
+        auto [l,r,v]=*it;
+        S.erase(it);
+        S.insert(node(l, pos - 1, v));
+        //insert函数返回pair，其中的first是新插入结点的迭代器
+        return S.insert(node(pos, r, v)).first;
+    }
+    void assign(int l, int r, int x) {
+        //attention must split(l) after split(r+1) 
+        It itr = split(r + 1), itl = split(l);
+        // for (It it = itl; it != itr; ++it) {
+        //     it;
+        // }
+        S.erase(itl, itr);
+        S.insert(node(l, r, x));
+    }
+}
+
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>ODT</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.c++</scope>
+</snippet>

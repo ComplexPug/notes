@@ -1,0 +1,41 @@
+<snippet>
+	<content><![CDATA[
+namespace LCSEG{
+    struct Line{ll k, b;} LINE[N];
+    int lson[MAXN] , rson[MAXN] , idL[MAXN], cnt = 0, num = 0;
+    ll calc(int id, ll x) {
+        return LINE[id].k * x + LINE[id].b;
+    }
+    void insert(int &rt , int l , int r , int id) {
+        if(rt == 0) {
+            rt = ++cnt;
+            idL[rt] = id;
+            return;
+        }
+        int mid = l + r >> 1;
+        if(calc(idL[rt] , mid) < calc(id , mid)) swap(idL[rt] , id);
+        if(calc(idL[rt] , l) >= calc(id , l) && calc(idL[rt] , r) >= calc(id , r)) return ;
+        if(calc(idL[rt] , l) < calc(id , l)) insert(lson[rt] , l , mid , id);
+        else insert(rson[rt] , mid + 1 , r , id);
+    }
+    ll query(int rt , int l , int r , ll x) {
+        if (rt == 0) return 0;
+        ll ret = calc(idL[rt] , x);
+        int mid = l + r >> 1;
+        if (x <= mid) ret = max(ret , query(lson[rt] , l , mid , x));
+        else ret = max(ret , query(rson[rt] , mid + 1 , r , x));
+        return ret;
+    }
+    void clear() {
+        for(int i = 1; i <= cnt; i ++) {
+            lson[i] = rson[i] = idL[i] = 0;
+        }
+        cnt = num = 0;
+    }
+}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>lichao</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.c++</scope>
+</snippet>

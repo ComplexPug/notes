@@ -1,0 +1,11 @@
+{
+	"ignored_packages":
+	[
+	],
+	"hardware_acceleration": "opengl",
+	"vintage_start_in_command_mode": true,
+	"color_scheme": "Mariana.sublime-color-scheme",
+	"theme": "Default Dark.sublime-theme",
+	"font_size": 15,
+	"index_files": true,
+}

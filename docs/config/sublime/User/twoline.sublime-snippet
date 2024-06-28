@@ -1,0 +1,25 @@
+<snippet>
+	<content><![CDATA[
+array<int,2> f(int x,int y,int b) {return array<int,2>({y-b,x+b});}
+int n,m;
+int A(int x,int y);
+int B(int x,int y);
+int A(int x,int y) {
+    auto [X,Y]=f(x,y,1);
+    if(X<0||Y<0) return 0;
+    return (C(X+Y,Y)-B(X,Y)+mod)%mod;
+}
+int B(int x,int y) {
+    auto [X,Y]=f(x,y,-(m+1)/2-1);
+    if(X<0||Y<0) return 0;
+    return (C(X+Y,Y)-A(X,Y)+mod)%mod;
+}
+int calc(int x,int y) {
+    return (C(x+y,y)-A(x,y)+mod-B(x,y)+mod)%mod;
+}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>twoline</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.c++</scope>
+</snippet>

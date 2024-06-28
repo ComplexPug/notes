@@ -1,0 +1,15 @@
+<snippet>
+	<content><![CDATA[
+#ifdef ONLINE_JUDGE
+	ios::sync_with_stdio(false);
+	//cin.tie(0);// cout.tie(0);
+#else
+    freopen("a.in","r",stdin);
+    // freopen("a.out","w",stdout);
+#endif
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>freopen</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>

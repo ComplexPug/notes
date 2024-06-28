@@ -1,0 +1,36 @@
+<snippet>
+	<content><![CDATA[
+#include <bits/stdc++.h>
+#define FOR(i,a,b) for(int i=a;i<=b;++i)
+#define int long long
+using namespace std;
+const int _=1e6+7;
+
+void solve() {
+    ${1:int n;
+    cin>>n;
+
+    vector<int> a(n);
+    }
+
+}
+signed main() {
+    #ifdef ONLINE_JUDGE
+        ios::sync_with_stdio(false);cin.tie(0);
+    #else
+        freopen("a.in","r",stdin);
+    #endif
+    int T;
+    cin>>T;
+    while(T--) {
+        solve();
+    }   
+    return 0;
+}
+
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>cf</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.c++</scope>
+</snippet>

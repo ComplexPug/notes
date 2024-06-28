@@ -1,0 +1,51 @@
+<snippet>
+	<content><![CDATA[
+namespace ntt {
+    // const int mod=998244353;
+    // const ll mod=1231453023109121;
+    // const ll mod=4179340454199820289;
+    int r[_],limit=1;
+    int ksm(int a,int b) {
+        int ans=1;
+        while(b) {
+            if(b&1) ans=1LL*ans*a%mod;
+            a=1LL*a*a%mod;
+            b>>=1;
+        }
+        return ans;
+    }
+    void ntt(int *a,int type) {
+        for(int i=0;i<=limit;++i)
+            if(i<r[i]) swap(a[r[i]],a[i]);
+        for(int mid=1;mid<limit;mid<<=1) {
+            int Wn=ksm(3,(mod-1)/(mid<<1));
+            for(int i=0;i<limit;i+=(mid<<1)) {
+                for(int j=0,w=1;j<mid;++j,w=1LL*w*Wn%mod) {
+                    int x=a[i+j],y=1LL*w*a[i+j+mid]%mod;
+                    a[i+j]=(x+y)%mod;
+                    a[i+j+mid]=(x-y+mod)%mod;
+                }
+            }
+        }
+        if(type==-1) {
+            reverse(&a[1],&a[limit]);
+            int inv=ksm(limit,mod-2);
+            for(int i=0;i<=limit;++i) a[i]=1LL*a[i]*inv%mod;
+        }
+    }
+    //a -> [0,lena] b -> [0,lenb]
+    void mul(int *a,int *b,int lena,int lenb) {
+        int l=0;while(limit<=lena+lenb) limit<<=1,l++;
+        for(int i=0;i<=limit;++i)
+            r[i]=(r[i>>1]>>1)|((i&1)<<(l-1));
+        ntt(a,1),ntt(b,1);
+        for(int i=0;i<=limit;++i) a[i]=1LL*a[i]*b[i]%mod;
+        ntt(a,-1);
+    }
+}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>ntt</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.c++</scope>
+</snippet>

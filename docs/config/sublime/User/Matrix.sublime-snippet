@@ -1,0 +1,41 @@
+<snippet>
+	<content><![CDATA[
+struct Matrix {
+    int n,m,a[101][101];
+    void debug() {
+        cout<<n<<" "<<m<<"\n";
+        for(int i=1;i<=n;++i) {
+            for(int j=1;j<=m;++j) {
+                cout<<a[i][j]<<" ";
+            } cout<<"\n";
+        }
+    }
+};
+Matrix operator * (Matrix a,Matrix b) {
+    Matrix ans={};    
+    if(a.m!=b.n) return ans;
+    ans.n=a.n,ans.m=b.m;
+    for(int i=1;i<=a.n;++i)
+        for(int j=1;j<=b.m;++j)
+            for(int k=1;k<=a.m;++k)
+                ans.a[i][j]=(ans.a[i][j]+a.a[i][k]*b.a[k][j]%mod)%mod;
+    return ans;
+}
+Matrix ksm(Matrix x,int p) {
+    Matrix ans={};
+    if(x.n!=x.m) return ans;
+    ans.n=ans.m=x.n;
+    for(int i=1;i<=ans.n;++i) ans.a[i][i]=1;
+    while(p) {
+        if(p&1) ans=ans*x;
+        x=x*x;
+        p>>=1;
+    }
+    return ans;
+}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>Matrix</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.c++</scope>
+</snippet>

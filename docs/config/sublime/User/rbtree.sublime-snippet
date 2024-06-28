@@ -1,0 +1,29 @@
+<snippet>
+	<content><![CDATA[
+#include <ext/pb_ds/tree_policy.hpp>
+#include <ext/pb_ds/assoc_container.hpp>
+#include <bits/stdc++.h>
+ 
+using namespace __gnu_pbds;
+typedef tree<int, null_type, less<int>, rb_tree_tag, tree_order_statistics_node_update> rbtree;
+ 
+/// int类型
+/// null_type为映射类型, 低版本g++为 null_mapped_type
+/// less<int>, greater<int> 比较器
+/// rb_tree_tag 和 splay_tree_tag 选择树的类型
+/// tree_order_statistics_node_update 结点更新
+ 
+/// insert, erase
+/// order_of_key rank
+/// find_by_order() kth
+/// lower_bound() 前继， >=x 最小的迭代器
+/// upper_bound() 后继   >x  最小的迭代器
+/// a.join(b) b并入a，前提是两颗树的取值范围不相交
+/// a.split(v, b) key <= v的属于a，其他属于
+/// 注意，插入的元素会去重，如set
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>rbtree</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.c++</scope>
+</snippet>

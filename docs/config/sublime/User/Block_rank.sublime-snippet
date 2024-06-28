@@ -1,0 +1,50 @@
+<snippet>
+	<content><![CDATA[
+namespace Block_rank {
+    int n,BLOCK;
+    int belong[_],lazy[_];
+    vector<array<int,2>> a[_];
+    int nxt(int x) {return min(BLOCK*(belong[x]+1),n+1);}
+    int pre(int x) {return max(BLOCK*belong[x]-1,0ll);}
+    void add(int l,int r,int x) {
+        for(int L=l,R=min(nxt(l)-1,r);L<=R;L=R+1,R=min(R+BLOCK,r)) {
+            int bl=belong[L];
+            if(R-L+1<BLOCK) {
+                for(auto& [val,y]:a[bl]) if(L<=y&&y<=R) val+=x;
+                sort(a[bl].begin(),a[bl].end());
+            } else {
+                lazy[bl]+=x;
+            }
+        }
+    }
+    int query(int l,int r,int x) {
+        if(l>r) return 0;
+        //how many i than >=x
+        int ans=0;
+        for(int L=l,R=min(nxt(l)-1,r);L<=R;L=R+1,R=min(R+BLOCK,r)) {
+            int bl=belong[L];
+            if(R-L+1<BLOCK) {
+                for(auto [val,y]:a[bl]) ans+=(L<=y&&y<=R&&val+lazy[bl]>=x);
+            } else {
+                array<int,2> tmp={x-lazy[bl],0};
+                ans+=a[bl].size()-(lower_bound(a[bl].begin(),a[bl].end(),tmp)-a[bl].begin());
+            }
+        }
+        return ans;
+    }
+    void init(int len,vector<int> init) {//[1,n]
+        n=len;
+        BLOCK=sqrt(n);
+        FOR(i,1,n) {
+            belong[i]=i/BLOCK;
+            a[belong[i]].push_back({init[i],i});
+        }
+        FOR(i,1,n/BLOCK) sort(a[i].begin(),a[i].end());
+    }
+}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>Block_rank</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.c++</scope>
+</snippet>

@@ -1,0 +1,27 @@
+<snippet>
+	<content><![CDATA[
+	int k=sqrt(q);
+    FOR(i,1,n) bel[i]=(i-1)/k+1;
+    sort(Q+1,Q+1+q,[&](node a,node b) {
+        return bel[a.l]!=bel[b.l] ? a.l<b.l :
+               (bel[a.l]&1 ? a.r<b.r : a.r>b.r);
+    });
+    int l=1,r=0;
+    FOR(i,1,q) {
+        auto add=[&](int x) -> void {
+        };
+        auto del=[&](int x) -> void {
+        };
+        while(l > Q[i].l) add(a[--l]);
+        while(r < Q[i].r) add(a[++r]);
+        while(l < Q[i].l) del(a[l++]);
+        while(r > Q[i].r) del(a[r--]);
+
+        ans[Q[i].id]=;
+    }
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>modui</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.c++</scope>
+</snippet>

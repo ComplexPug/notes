@@ -1,0 +1,21 @@
+<snippet>
+    <content><![CDATA[
+
+int jc[_],inv_jc[_];
+int C(int n,int m) {
+    if(m>n) return 0;
+    return 1ll * jc[n] * inv_jc[m] %mod * inv_jc[n-m] %mod;
+}
+void init() {
+    int n=1e6;
+    inv_jc[0]=jc[0]=1;
+    FOR(i,1,n) jc[i]=1ll*jc[i-1]*i%mod;
+    inv_jc[n]=ksm(jc[n],mod-2);
+    for(int i=n-1;i>=1;--i) inv_jc[i]=1ll*inv_jc[i+1]*(i+1)%mod;
+}
+]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+    <tabTrigger>zuheshu</tabTrigger>
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <!-- <scope>source.python</scope> -->
+</snippet>

@@ -1,0 +1,20 @@
+<snippet>
+	<content><![CDATA[
+ inline long long calc4() {
+    long long ans = 0;
+    for(int u=1;u<=N;++u) {
+        for(auto v: G[u])
+            for(auto w: H[v])
+                if(cmp(u,w)) (ans += vis[w] ++)%=MOD;
+        for(auto v: G[u])
+            for(auto w: H[v])
+                if(cmp(u,w)) vis[w] = 0;
+    }
+    return ans;
+} 
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>siyuanhuan</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.c++</scope>
+</snippet>

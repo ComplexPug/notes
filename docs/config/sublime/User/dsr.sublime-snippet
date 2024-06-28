@@ -1,0 +1,26 @@
+<snippet>
+	<content><![CDATA[
+#include <bits/stdc++.h>
+#define int long long
+#define FOR(i,a,b) for(int i=a;i<=b;++i)
+using namespace std;
+const int _=1e6+7;
+// const int mod=998244353;
+int read() {
+    int x=0,f=1;char s=getchar();
+    for(;s>'9'||s<'0';s=getchar()) if(s=='-') f=-1;
+    for(;s>='0'&&s<='9';s=getchar()) x=x*10+s-'0';
+    return x*f;
+}
+int n,a[_];
+
+signed main() {
+    ${1://coding here...}
+    return 0;
+}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>dsr</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.c++</scope>
+</snippet>

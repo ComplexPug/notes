@@ -1,0 +1,56 @@
+<snippet>
+	<content><![CDATA[
+namespace seg {
+    #define ls rt<<1
+    #define rs rt<<1|1
+    struct node {int tot,lazy;}e[_<<2];
+    void pushup(int rt) {
+        e[rt].tot=(e[ls].tot+e[rs].tot);
+    }
+    void build(int l,int r,int rt) {
+        if(l==r) {
+            e[rt].tot=a[l];
+            return;
+        }
+        int mid=(l+r)>>1;
+        build(l,mid,ls);
+        build(mid+1,r,rs);
+        pushup(rt);
+    }
+    void tag(int rt,int ad,int l,int r) {
+        e[rt].tot=e[rt].tot+(r-l+1)*ad;
+        e[rt].lazy=(e[rt].lazy+ad);
+    }
+    void pushdown(int rt,int l,int r) {
+        if(e[rt].lazy) {
+            int mid=(l+r)>>1;
+            tag(ls,e[rt].lazy,l,mid);
+            tag(rs,e[rt].lazy,mid+1,r);
+            e[rt].lazy=0;
+        }
+    }
+    void modify(int l,int r,int L,int R,int ad,int rt) {
+        if(L<=l&&r<=R) return tag(rt,ad,l,r);
+        pushdown(rt,l,r);
+        int mid=(l+r)>>1;
+        if(L<=mid) modify(l,mid,L,R,ad,ls);
+        if(R>mid) modify(mid+1,r,L,R,ad,rs);
+        pushup(rt);
+    }
+    int query(int l,int r,int L,int R,int rt) {
+        if(L<=l&&r<=R) return e[rt].tot;
+        pushdown(rt,l,r);
+        int mid=(l+r)>>1,tot=0;;
+        if(L<=mid) tot+=query(l,mid,L,R,ls);
+        if(R>mid) tot+=query(mid+1,r,L,R,rs);
+        return tot;
+    }
+    #undef ls
+    #undef rs
+}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>seg_tree</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.c++</scope>
+</snippet>

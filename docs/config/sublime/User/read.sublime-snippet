@@ -1,0 +1,14 @@
+<snippet>
+	<content><![CDATA[
+int read() {
+    int x=0,f=1;char s=getchar();
+    for(;s>'9'||s<'0';s=getchar()) if(s=='-') f=-1;
+    for(;s>='0'&&s<='9';s=getchar()) x=x*10+s-'0';
+    return x*f;
+}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>fast_read</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.c++</scope>
+</snippet>

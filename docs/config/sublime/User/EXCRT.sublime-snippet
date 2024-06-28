@@ -1,0 +1,32 @@
+<snippet>
+	<content><![CDATA[
+namespace EXCRT {
+    using ll = long long ;
+    ll exgcd(ll a , ll &x , ll b , ll & y) {
+        if (!b) {
+            x = 1 , y = 0 ; 
+            return a ; 
+        }
+        ll g = exgcd(b , y , a % b , x) ;
+        y -= a / b * x ;
+        return g ; 
+    }
+    ll excrt(vector<ll> a , vector<ll> m) {
+        ll A = a[0] , M = m[0] ;
+        for (int i = 1 , n = a.size() ; i < n ; ++ i) {
+            ll x , y , na = a[i] , nm = m[i] , c = na - A ;
+            ll g = exgcd(M , x , nm , y) ; 
+            if (c % g) return -1 ;
+            nm /= g , x = (__int128)x * (c / g) % nm ;
+            A += x * M , M *= nm ;
+            if ((A %= M) < 0) A += M ;
+        }
+        return A ; 
+    }
+} using namespace EXCRT ;
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>EXCRT</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.c++</scope>
+</snippet>

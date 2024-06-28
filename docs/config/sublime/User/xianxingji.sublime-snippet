@@ -1,0 +1,53 @@
+<snippet>
+	<content><![CDATA[
+struct Lbase {
+    static const int M = __lg(INT64_MAX) + 1 ;
+    using ll = long long ;
+    bool zero ;
+    vector<ll> p ; 
+    Lbase() : zero(0) , p(M , 0) {}
+    void insert(ll x) {
+        for (int i = M - 1 ; ~i ; -- i) if (x >> i & 1) {
+            if (!p[i]) {
+                p[i] = x ; 
+                break;
+            }
+            else x ^= p[i] ; 
+        } if (!x) zero = 1 ;
+    }
+    ll min(ll x = 0) {
+        ll last = -1 ; //assert(base.empty())
+        ll t = x ;
+        for (int i = M - 1 ; ~i ; -- i) if (p[i]) {
+            if ((t >> i & 1)) t ^= p[i] ; 
+            last = i ; 
+        } return x ? t : zero ? 0 : p[last] ;
+    }
+    ll max(ll x = 0) {
+        for (int i = M - 1 ; ~i ; -- i) if (!(x >> i & 1)) x ^= p[i] ;
+        return x ; 
+    }
+    bool find(ll x) { return !min(x) ; }
+    void rebuild() {
+        vector<ll> t = p ; 
+        for (int i = 0 ; i < M ; ++ i)
+            for (int j = i - 1 ; ~j ; -- j) 
+                if (t[i] >> j & 1) t[i] ^= t[j] ; 
+        swap(p , t) ; 
+    }
+    ll kth(ll k) { // 查询第k小
+        k -= zero ;
+        ll x = 0 , bit = 0 ;
+        for (int i = 0 ; i < M ; ++ i) if (p[i]) {
+            if (k >> bit & 1) x ^= p[i] ; 
+            ++ bit ;
+        }
+        return (1ll << bit) > k ? x : -1 ;
+    }
+}Base ;
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>xianxingji</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.c++</scope>
+</snippet>

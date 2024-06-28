@@ -1,0 +1,69 @@
+<snippet>
+	<content><![CDATA[
+int n,len_a,len_b,p,limit;
+int f[N],g[N],a[N],b[N],r[N];
+int ksm(int a,int b) {
+    int ans=1;
+    while(b) {
+        if(b&1) ans=1LL*ans*a%mod;
+        a=1LL*a*a%mod;
+        b>>=1;
+    }
+    return ans;
+}
+void ntt(int *a,int type) {
+    for(int i=0;i<=limit;++i)
+        if(i<r[i]) swap(a[i],a[r[i]]);
+    for(int mid=1;mid<limit;mid<<=1) {
+        int Wn=ksm(3,(mod-1)/(mid<<1));
+        for(int i=0;i<limit;i+=(mid<<1)) {
+            for(int j=0,w=1;j<mid;++j,w=1LL*w*Wn%mod) {
+                int x=a[i+j],y=1LL*w*a[i+j+mid]%mod;
+                a[i+j]=(x+y)%mod;
+                a[i+j+mid]=(x-y+mod)%mod;
+            }
+        }
+    }
+    if(type==-1) {
+        reverse(&a[1],&a[limit]);
+        int inv=ksm(limit,mod-2);
+        for(int i=0;i<=limit;++i) a[i]=1LL*a[i]*inv%mod;
+    }
+}
+void init() {
+    limit=1,p=0;
+    while(limit<len_b) limit<<=1,p++;
+    for(int i=len_a;i<=limit;++i) a[i]=0;
+    for(int i=len_b;i<=limit;++i) b[i]=0;
+    for(int i=0;i<=limit;++i)
+        r[i]=(r[i>>1]>>1)|((i&1)<<(p-1));
+}
+void solve(int l,int r) {
+    //please think the clear of all a and b ! ! !
+    if(l>=r) return;
+    int mid=(l+r)>>1;
+    solve(l,mid);
+    len_a=0,len_b=r-l+1;
+    for(int i=l;i<=mid;++i) a[len_a++]=f[i];
+    for(int i=1;i<=r-l;++i) b[i]=g[i];
+    init();
+    ntt(a,1),ntt(b,1);
+    for(int i=0;i<=limit;++i) a[i]=1LL*a[i]*b[i]%mod;
+    ntt(a,-1);
+    for(int i=mid+1;i<=r;++i) f[i]=(f[i]+a[i-l])%mod;
+    solve(mid+1,r);
+}
+int main() {
+    n=read();
+    for(int i=1;i<n;++i) g[i]=read();
+    f[0]=1;
+    solve(0,n-1);
+    for(int i=0;i<n;++i) printf("%d ",f[i]);
+    return 0;
+}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>mid_ntt</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.c++</scope>
+</snippet>

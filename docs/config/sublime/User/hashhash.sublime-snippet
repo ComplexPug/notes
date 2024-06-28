@@ -1,0 +1,61 @@
+<snippet>
+	<content><![CDATA[
+namespace HASH {
+    using i64 = long long ; 
+    using PII = pair<i64,i64> ;
+    mt19937 mrand(random_device{}());
+    int rnd(int x) {return mrand() % x;}
+    const i64 mod0 = 1e9 + 7 , mod1 = 1e9 + 5 ; 
+    const i64 P0 = rnd(mod0) + 1 , P1 = rnd(mod1) + 1 ;
+    const PII P = {P0 , P1} , mod = {mod0 , mod1}; 
+    PII h[N] ;
+    PII operator * (PII a , PII b) {
+        return {a.first * b.first % mod0 , a.second * b.second % mod1} ; 
+    }
+    PII operator + (PII a , PII b) {
+        i64 x = a.first + b.first ; if (x >= mod.first) x -= mod.first ; 
+        i64 y = a.second + b.second ; if (y >= mod.second) y -= mod.second ;  
+        return {x , y} ; 
+    }
+    PII operator - (PII a , PII b) {
+        return {a.first - b.first , a.second - b.second} ; 
+    }
+    int hash_init() {
+        h[0] = {1 , 1} ; 
+        for (int i = 1 ; i < N ; ++ i) h[i] = h[i - 1] * P ;
+        return 0 ; 
+    }
+    int HASH_INIT = hash_init() ; 
+    struct Hash {
+        int n = 0 ;  vector<PII> f ;
+        void init(string s) {
+            n = s.length() ; f.resize(n + 1) ;
+            f[0] = {0 , 0} ;
+            for (int i = 1 ; i <= n ; ++ i)
+                f[i] = f[i - 1] * P + PII(s[i - 1] , s[i - 1]) ; 
+        }
+        void add(string s) {
+            int m = s.size() ; 
+            f.resize(n + m + 1) ; 
+            for (int i = n + 1 , j = n + m ; i <= j ; ++ i)
+                f[i] = f[i - 1] * P + PII(s[i - n - 1] , s[i - n - 1]) ; 
+            n += m ; 
+        }
+        PII get(int l , int r) {
+            PII t = (f[r] - f[l - 1] * h[r - l + 1]) ;
+            if (t.first < 0) t.first += mod.first ; 
+            else if (t.first >= mod0) t.first -= mod0 ; 
+
+            if (t.second < 0) t.second += mod1 ; 
+            else if (t.second >= mod1) t.second -= mod1 ; 
+            
+            return t ; 
+        }
+    } ; 
+} using namespace HASH ;
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>hashhash</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>

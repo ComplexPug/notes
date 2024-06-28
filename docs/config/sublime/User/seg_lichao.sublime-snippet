@@ -1,0 +1,50 @@
+<snippet>
+	<content><![CDATA[
+namespace seg_lichao {
+    int cnt;
+    struct node {
+        int val,ls,rs;
+    }e[_*50];
+    int a[_],b[_];//double
+    int f(int x,int l) {return a[x]*l+b[x];}//double
+    int cmp(int x,int y,int r) {return f(x,r)<=f(y,r);}// if max >=
+    void modify(int l,int r,int k,int &rt,int old) {
+        rt=++cnt;
+        if(old==0) {
+            e[rt]={k,0,0};
+        } else {
+            e[rt]=e[old];
+        }
+
+        if(l==r) {
+            if(cmp(k,e[rt].val,l)) e[rt].val=k;
+            return;
+        }
+        int mid=(l+r)>>1;
+        if(a[k]<a[e[rt].val]) {//if max >
+            if(cmp(k,e[rt].val,mid))
+                modify(l,mid,e[rt].val,e[rt].ls,e[old].ls),e[rt].val=k;
+            else
+                modify(mid+1,r,k,e[rt].rs,e[old].rs);
+        }
+        else {
+            if(cmp(k,e[rt].val,mid))
+                modify(mid+1,r,e[rt].val,e[rt].rs,e[old].rs),e[rt].val=k;
+            else
+                modify(l,mid,k,e[rt].ls,e[old].ls);
+        }
+    }
+    int query(int l,int r,int L,int rt) {
+        if(!rt) return inf;//if max -inf
+        if(l==r) return f(e[rt].val,L);
+        int mid=(l+r)>>1;
+        if(L<=mid) return min(f(e[rt].val,L),query(l,mid,L,e[rt].ls));//if max max()
+        else return min(f(e[rt].val,L),query(mid+1,r,L,e[rt].rs));//if max max()
+    }
+}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>seg_lichao</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.c++</scope>
+</snippet>

@@ -1,0 +1,20 @@
+<snippet>
+	<content><![CDATA[
+int vis[_],pri[_],cnt;
+void Euler() {
+    int N=1e6+8;
+    for(int i=2;i<=N;++i) {
+        if(!vis[i]) {
+            pri[++cnt]=i;
+            for(int j=i;j<=N;j+=i) {
+                vis[j]=1;
+            }
+        }
+    }
+}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>Euler</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>

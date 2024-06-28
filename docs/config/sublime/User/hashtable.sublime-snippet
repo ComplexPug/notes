@@ -1,0 +1,36 @@
+<snippet>
+	<content><![CDATA[
+#include<bits/stdc++.h>
+#include<ext/pb_ds/assoc_container.hpp>
+#define time chrono::system_clock::now().time_since_epoch().count()
+#include<ext/pb_ds/tree_policy.hpp>
+using namespace std;
+using namespace __gnu_pbds;
+mt19937_64 rnd(time);
+
+struct F{
+    static uint64_t splitmix64(uint64_t x) {
+        x ^= x << 13;
+        x ^= x >> 7;
+        x ^= x << 17;
+        return x;
+    }
+    size_t operator () (uint64_t x) const {
+        static const uint64_t y = time;
+        return splitmix64(x + y);
+    }
+};
+gp_hash_table<int,int,F> mp2;
+
+
+int main(int argc, char const *argv[])
+{
+    /* code */
+    return 0;
+}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>hashtable</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.c++</scope>
+</snippet>

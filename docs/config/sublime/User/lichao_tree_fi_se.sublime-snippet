@@ -1,0 +1,97 @@
+<snippet>
+	<content><![CDATA[
+struct Line{
+    int k,b;
+}Ln[N];
+
+vector<int>V;
+int F(int i,int x){
+    if(!i)return 0;
+    return Ln[i].k*V[x-1]+Ln[i].b;
+}
+int getid(int x){
+    return lower_bound(V.begin(),V.end(),x)-V.begin()+1;
+}
+struct lichao_tree{
+    int tr[N<<2][2];
+    void ins(int id,int l,int r,int o){
+        int i=0;
+        int mid=l+r>>1;
+        if(tr[id][0]==0||F(o,mid)>F(tr[id][0],mid)){
+            i=tr[id][0];
+            tr[id][1]=tr[id][0];
+            tr[id][0]=o;
+        }
+        else if(tr[id][1]==0||F(o,mid)>F(tr[id][1],mid)){
+            i=o;
+            tr[id][1]=o;
+        }
+        else{
+            i=o;
+        }
+        if(l==r)return;
+        if(!i)return;
+        if(i==tr[id][1]||F(i,l)>min(F(tr[id][0],l),F(tr[id][1],l)))ins(id<<1,l,mid,i);
+        if(i==tr[id][1]||F(i,r)>min(F(tr[id][0],r),F(tr[id][1],r)))ins(id<<1|1,mid+1,r,i);
+    }
+    pii qry(int id,int l,int r,int x){
+        if(l==r){
+            return {tr[id][0],tr[id][1]};
+        }
+        pii res={tr[id][0],tr[id][1]};
+        int mid=l+r>>1;
+        if(x<=mid){
+            pii tmp=qry(id<<1,l,mid,x);
+            if(res.fi==0||F(tmp.fi,x)>F(res.fi,x)){
+                res.se=res.fi;
+                res.fi=tmp.fi;
+            }
+            else if(res.se==0||F(tmp.fi,x)>F(res.se,x)){
+                res.se=tmp.fi;
+            }
+            if(res.se==0||F(tmp.se,x)>F(res.se,x)){
+                res.se=tmp.se;
+            }
+        }
+        else{
+            pii tmp=qry(id<<1|1,mid+1,r,x);
+            if(res.fi==0||F(tmp.fi,x)>F(res.fi,x)){
+                res.se=res.fi;
+                res.fi=tmp.fi;
+            }
+            else if(res.se==0||F(tmp.fi,x)>F(res.se,x)){
+                res.se=tmp.fi;
+            }
+            if(res.se==0||F(tmp.se,x)>F(res.se,x)){
+                res.se=tmp.se;
+            }
+        }
+        return res;
+    }
+}T;
+void solve(int u){
+    V.clear();
+    for(auto pr:Qry[u]){
+        V.push_back(pr.fi);
+    }
+    sort(V.begin(),V.end());V.erase(unique(V.begin(),V.end()),V.end());
+    m=V.size();
+    if(!m)return;
+    for(int i=0;i<=m*4;i++)T.tr[i][0]=T.tr[i][1]=0;
+    int tot=0;
+    for(auto pr:vec[u]){
+        Ln[++tot]={pr.fi,pr.se};
+        T.ins(1,1,m,tot);
+    }
+    for(auto pr:Qry[u]){
+        int v=getid(pr.fi);
+        pii res=T.qry(1,1,m,v);
+        ans[pr.se]=F(res.fi,v)+F(res.se,v);
+    }
+}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>lichao_tree_fi_se</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.c++</scope>
+</snippet>

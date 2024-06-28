@@ -1,0 +1,55 @@
+<snippet>
+    <content><![CDATA[
+#include <bits/stdc++.h>
+#define ll long long
+using namespace std;
+const int N=2e6+7;
+struct node {
+    int ch[30],len,fa;
+}dian[N<<1];
+int siz[N<<1],las=1,tot=1;
+void add(int c) {
+    int p=las;int np=las=++tot;
+    dian[np].len=dian[p].len+1;
+    for(;p&&!dian[p].ch[c];p=dian[p].fa) dian[p].ch[c]=np;
+    if(!p) dian[np].fa=1;
+    else {
+        int q=dian[p].ch[c];
+        if(dian[q].len==dian[p].len+1) dian[np].fa=q;
+        else {
+            int nq=++tot;dian[nq]=dian[q];
+            dian[nq].len=dian[p].len+1;
+            dian[q].fa=dian[np].fa=nq;
+            for(;p&&dian[p].ch[c]==q;p=dian[p].fa)
+                dian[p].ch[c]=nq;    
+        }
+    }
+    siz[las]=1;
+}
+int n,a[N],c[N];
+char s[N];
+void clac() {
+    for(int i=1;i<=tot;++i) c[dian[i].len]++;
+    for(int i=1;i<=tot;++i) c[i]+=c[i-1];
+    for(int i=1;i<=tot;++i) a[c[dian[i].len]--]=i;
+    ll ans=0;
+    for(int i=tot;i>=1;--i) {
+        int p=a[i];
+        siz[dian[p].fa]+=siz[p];
+        if(siz[p]>1) ans=max(ans,1LL*siz[p]*dian[p].len);
+    }
+    printf("%lld\n",ans);
+}
+int main() {
+    scanf("%s",s+1);
+    n=strlen(s+1);
+    for(int i=1;i<=n;++i) add(s[i]-'a');
+    clac();
+    return 0;
+}
+]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+    <tabTrigger>sam</tabTrigger>
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <scope>source.c++</scope>
+</snippet>

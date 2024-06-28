@@ -1,0 +1,35 @@
+<snippet>
+	<content><![CDATA[
+struct hash {
+	char s[_];
+	int mod[2]={1000000007,998244353};
+	int base[2]={233,107};
+	int pow[2][_],sum[2][_];
+	int len;
+	void init() {
+		len=strlen(s+1);
+		for(int T=0;T<=1;++T) {
+			pow[T][0]=1;sum[T][0]=0;
+			for(int i=1;i<=len;++i)
+				pow[T][i]=1ll*pow[T][i-1]*base[T]%mod[T];
+			for(int i=1;i<=len;++i)
+				sum[T][i]=(1ll*sum[T][i-1]*base[T]%mod[T]+s[i])%mod[T];
+		}
+	}
+	int get_hash(int l,int r,int T) {
+		int val = (sum[T][r]-1ll*sum[T][l-1]*pow[T][r-l+1]%mod[T])%mod[T];
+		return (val%mod[T]+mod[T])%mod[T];
+	}
+	array<int,2> get_hash(int l,int r) {
+		return {get_hash(l,r,0),get_hash(l,r,1)};
+	}
+	bool check(int l,int r,int x,int y) {
+		return get_hash(l,r)==get_hash(x,y);
+	}
+};
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>hash</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.c++</scope>
+</snippet>

@@ -1,0 +1,19 @@
+{
+    "encoding": "UTF-8", 
+    "working_dir": "$file_path",
+    "shell_cmd": "g++ -std=c++17 -Wl,--stack=7034589000 \"$file_name\" -o \"$file_base_name\" -O2",
+    "file_regex": "^(..[^:]*):([0-9]+):?([0-9]+)?:? (.*)$",
+    "selector": "source.c++",
+ 
+    "variants":
+    [
+        {  
+            "name": "RunCode",
+            "shell_cmd": "g++ -std=c++17 -Wl,--stack=7034589000 \"$file\" -o \"$file_base_name\" -O2 && start cmd /c \"\"${file_path}/${file_base_name}\" & pause\""
+        },
+        {  
+            "name": "RunCode_And_A.in",
+            "shell_cmd": "g++ -std=c++17 -Wl,--stack=7034589000 \"$file\" -o \"$file_base_name\" -O2 && start cmd /c \"\"${file_path}/${file_base_name}\" < a.in & pause\""
+        }
+    ]
+}

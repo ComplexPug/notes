@@ -1,0 +1,85 @@
+<snippet>
+	<content><![CDATA[
+#include <bits/stdc++.h>
+#define FOR(i,a,b) for(int i=a;i<=b;++i)
+using namespace std;
+const int maxn=100007;
+int read() {
+    int x=0,f=1;char s=getchar();
+    for(;s>'9'||s<'0';s=getchar()) if(s=='-') f=-1;
+    for(;s>='0'&&s<='9';s=getchar()) x=x*10+s-'0';
+    return x*f;
+}
+int ch[maxn][2],siz[maxn],val[maxn],pri[maxn],cnt;
+void pushup(int x) {
+    siz[x]=1+siz[ch[x][0]]+siz[ch[x][1]];
+}
+int make_edge(int x) {
+    val[++cnt]=x,siz[cnt]=1,pri[cnt]=rand();
+    return cnt;
+}
+int merge(int x,int y) {
+    if(!x||!y) return x+y;
+    if(pri[x]<pri[y]) {
+        ch[x][1]=merge(ch[x][1],y);
+        pushup(x);
+        return x;
+    } else {
+        ch[y][0]=merge(x,ch[y][0]);
+        pushup(y);
+        return y;
+    }
+}
+void split(int now,int k,int &x,int &y) {
+    if(!now) x=y=0;
+    else {
+        if(val[now]<=k) 
+            x=now,split(ch[now][1],k,ch[x][1],y);
+        else 
+            y=now,split(ch[now][0],k,x,ch[y][0]);
+        pushup(now);
+    }
+}
+int k_th(int now,int k) {
+    while(233) {
+        if(k==siz[ch[now][0]]+1) return now;
+        if(k<=siz[ch[now][0]]) now=ch[now][0];
+        else k-=siz[ch[now][0]]+1,now=ch[now][1];
+    }
+}
+int main() {
+    int n=read(),rt=0;
+    FOR(i,1,n) {
+        int opt=read(),a=read(),x,y,z;
+        if(opt==1){
+            split(rt,a,x,y);
+            rt=merge(merge(x,make_edge(a)),y);
+        } else if(opt==2) {
+            split(rt,a,x,z);
+            split(x,a-1,x,y);
+            y=merge(ch[y][0],ch[y][1]);
+            rt=merge(merge(x,y),z);
+        } else if(opt==3) {
+            split(rt,a-1,x,y);
+            printf("%d\n",siz[x]+1);
+            rt=merge(x,y);
+        } else if(opt==4) {
+            printf("%d\n",val[k_th(rt,a)]);
+        } else if(opt==5) {
+            split(rt,a-1,x,y);
+            printf("%d\n",val[k_th(x,siz[x])]);
+            rt=merge(x,y);
+        } else if(opt==6) {
+            split(rt,a,x,y);
+            printf("%d\n",val[k_th(y,1)]);
+            rt=merge(x,y);
+        }
+    }
+    return 0;
+}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>fhq-treap</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.c++</scope>
+</snippet>

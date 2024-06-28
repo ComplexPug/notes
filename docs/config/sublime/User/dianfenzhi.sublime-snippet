@@ -1,0 +1,95 @@
+<snippet>
+	<content><![CDATA[
+#include <bits/stdc++.h>
+using namespace std;
+const int _=2e6+7;
+int n,m,rt,rt_rt,tot;
+struct node {
+    int u,v,q,nxt;
+}e[_<<1];
+int head[_<<1],cnt;
+void add(int u,int v,int q) {
+    e[++cnt].v=v;
+    e[cnt].q=q;
+    e[cnt].nxt=head[u];
+    head[u]=cnt;
+}
+int dis[_],siz[_],Q[_],stak[_],q[_];
+bool pd[10000007],vis[_],ok[_];
+void get_rt(int u,int f) {
+    siz[u]=1;
+    int tmp=0;
+    for(int i=head[u];i;i=e[i].nxt) {
+        int v=e[i].v;
+        if(v==f||vis[v]) continue;
+        get_rt(v,u);
+        siz[u]+=siz[v];
+        tmp=max(tmp,siz[v]);
+    }
+    tmp=max(tmp,tot-siz[u]);
+    if(tmp<rt_rt) rt_rt=tmp,rt=u;
+}
+void get_dis(int u,int f) {
+    stak[++stak[0]]=dis[u];
+    for(int i=head[u];i;i=e[i].nxt) {
+        int v=e[i].v;
+        if(v==f||vis[v]) continue;
+        dis[v]=dis[u]+e[i].q;
+        get_dis(v,u);
+    }
+}
+
+void calc(int u) {
+    int p=0;
+    for(int i=head[u];i;i=e[i].nxt) {
+        int v=e[i].v;
+        if(vis[v]) continue;
+        stak[0]=0,dis[v]=e[i].q;
+        get_dis(v,u);
+        for(int j=1;j<=stak[0];++j) {
+            for(int k=1;k<=m;++k) {
+                if(Q[k]>=stak[j]&&pd[Q[k]-stak[j]]) ok[k]=1;
+            }
+        }
+        for(int j=1;j<=stak[0];++j) {
+            q[++p]=stak[j],pd[stak[j]]=1;
+        }
+    }
+    for(int i=1;i<=p;++i) pd[q[i]]=0;
+}
+void dfs(int u) {
+    pd[0]=vis[u]=1,calc(u);
+    for(int i=head[u];i;i=e[i].nxt) {
+        int v=e[i].v;
+        if(vis[v]) continue;
+        tot=siz[v],rt_rt=0x3f3f3f3f,rt=0;
+        get_rt(v,0);
+        dfs(rt);
+    }
+}
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(0);// cout.tie(0);
+    cin>>n>>m;
+    for(int i=1;i<n;++i) {
+        int x,y,z;
+        cin>>x>>y>>z;
+        add(x,y,z);
+        add(y,x,z);
+    }
+    for(int i=1;i<=m;++i) cin>>Q[i];
+    rt_rt=tot=n;
+    get_rt(1,0);
+    dfs(rt);
+    for(int i=1;i<=m;++i) {
+        if(ok[i]) cout<<"AYE"<<"\n";
+        else cout<<"NAY"<<"\n";
+    }
+    return 0;
+}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>dianfenzhi</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.c++</scope>
+</snippet>
