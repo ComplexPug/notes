@@ -26,6 +26,7 @@ KeyCastr : 将mac按键显示在屏幕上，分享演示、录制视频或动图
 
 Obs :
 
+
 vim：在里面的粘贴体验很棒，是我用过最好的。
 
 pstree：没有
@@ -54,6 +55,15 @@ vmare ： 个人免费，下载有点难找
 注：crxMouse in chrome会影响右键等操作。
 
 ## 快捷键
+[官网快捷键说明](https://support.apple.com/zh-cn/102650)
+如果是中文输入法下，有些快捷键会不起作用。
+
+### vscode
+command+shifit+z 取消撤回
+option + 上下 移动一行  + 左右 单词移动
+command + 左右 begin/end
+
+### 其他
 
 contrl,option,command
 
@@ -66,13 +76,15 @@ control + 点摁 : 右击
 control + 上下 : 三指上下
 control + 左右 : 三指左右
 
-复制后粘贴的时候用 option+command+v 就剪切了.
+复制file后粘贴的时候用 option+command+v 就剪切了.
 
 command更像是win的ctrl，类似于复制粘贴，chrome快捷键都是用command
 
 command + , : 打开当前软件设置
 
 control + command + f : 全屏软件
+
+control + 左右： 切换桌面
 
 contrl + space : 切换输入法
 
@@ -86,6 +98,8 @@ option + 启动台 ： 删除不是App Store的软件
 option + 全屏按钮 ：默认的三个（左，右，全）都是全屏操作，点击option都被替换为当前桌面的操作 
 
 F11 显示桌面
+
+fn + backspace ： delete
 
 fn + F : 退出/进入全屏
 
