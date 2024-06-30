@@ -2,3 +2,4 @@
 .vscode/
 site/
 .obsidian
+*.swp
