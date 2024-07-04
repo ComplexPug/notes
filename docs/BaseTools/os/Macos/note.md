@@ -39,6 +39,11 @@ pstree：没有
 
 或者用访达删除文件夹
 
+## 终端
+
+cmd+k 或者ctrl+l ：真正的clear
+clear只是位移
+
 ## 虚拟机
 Parallels Desktop ： 收费，懒得折腾
 utm ： 简单，官网免费
