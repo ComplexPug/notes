@@ -1,4 +1,32 @@
 # LaTeX
+
+## 命令
+
+如果直接输入命令，是xelatex而不是xetex，害我查了好久。
+
+当然也能看到texstudio的命令
+```shell
+xelatex -synctex=1 -interaction=nonstopmode "main".tex
+第一个是pdf同步，第二个是编译不stop。
+```
+
+## 对于中文的支持
+
+很多软件都是默认pdftex引擎的，中文一般使用utf8的xetex。
+
+但用了xetex还要搭配xtex宏包，或者使用xtexbook等document格式才能正常显示，否则只是编译通过。
+
+当然pdftex也是可以的，通过ctex，[UTF8] ctexbook等选项，这里我就不验证了。
+
+## 对于emoji的支持
+~~感觉latex的配置十分繁琐。~~
+
+貌似luatex支持一点，其他的没查到。总之，貌似用不了，插图片吧。
+
+https://ctan.org/pkg/emotion
+
+
+## begin
 readme.zh-cn.html
 
 请记住 texdoc 命令，用于打开宏包帮助文档，使用方法如下
@@ -12,14 +40,6 @@ install-latex-guide-zh-cn
 第一份文档，入门使用，看完它之后，你的一些日常写作应当没有任何问题，强烈推荐
 
 第二份文档，解决你安装过程中遇到的 99% 的问题，请按需仔细阅读
-
-调出它们的方法很简单，只需要命令行执行
-
-texdoc lshort-zh-zn
-texdoc install-latex-guide-zh-cn
-
-texlive
-texstduio
 
 ```tex
 %导言区
@@ -59,4 +79,60 @@ texstduio
 	\end{tabular}
 	
 \end{document}
+```
+
+## 编译工具
+win/linux：texlive下载anzhuang
+mac：mactex安装，貌似是个texlive for mac
+
+## 写作工具
+texstudio：ui上丑了点，但还是功能还算多。
+vscode+tex插件：可能配置比较繁琐。
+可以setting.json加上下列配置
+```json
+
+    "workbench.editorAssociations": {
+        "*.pdf": "latex-workshop-pdf-hook"
+    },
+    "latex-workshop.latex.autoClean.run": "onBuilt",
+    "latex-workshop.latex.recipes": [
+        {
+            "name": "latexmk (xelatex)",
+            "tools": [
+                "xelatexmk"
+            ]
+        },
+        {
+            "name": "xelatex -> bibtex -> xelatex * 2",
+            "tools": [
+                "xelatex",
+                "bibtex",
+                "xelatex",
+                "xelatex"
+            ]
+        },
+    ],
+    "latex-workshop.view.pdf.viewer": "tab",
+    "latex-workshop.latex.clean.fileTypes": [
+        "*.aux",
+        "*.bbl",
+        "*.blg",
+        "*.idx",
+        "*.ind",
+        "*.lof",
+        "*.lot",
+        "*.out",
+        "*.toc",
+        "*.acn",
+        "*.acr",
+        "*.alg",
+        "*.glg",
+        "*.glo",
+        "*.gls",
+        "*.ist",
+        "*.fls",
+        "*.log",
+        "*.fdb_latexmk"
+    ],
+    "latex-workshop.latex.recipe.default": "lastUsed",
 ```

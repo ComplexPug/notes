@@ -299,6 +299,7 @@ set encoding=utf-8
 syntax on 开启语法高亮
 filetype plugin indent on 开启文件类型检测
 最后奉上蒟蒻的配置：（蒟蒻配置了 F5 一键运行）
+```shell
 set nu
 set tabstop=4
 set showmatch
@@ -327,7 +328,7 @@ elseif &filetype == 'sh'
 :!time bash %
 endif
 endfunc
-
+```
 
 
 1. vim教程
