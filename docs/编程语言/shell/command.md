@@ -2,6 +2,7 @@
 
 ## base
 ```shell
+zsh-autosugesstions : 可以按->来激活功能，不是tab
 echo # 输出
 exec # 执行
 export # 启动

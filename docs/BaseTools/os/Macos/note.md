@@ -69,6 +69,7 @@ option + 上下 移动一行  + 左右 单词移动
 command + 左右 begin/end
 
 ### 其他
+常按就是大写锁定
 
 contrl,option,command
 

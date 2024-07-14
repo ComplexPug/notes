@@ -25,6 +25,8 @@ xelatex -synctex=1 -interaction=nonstopmode "main".tex
 
 https://ctan.org/pkg/emotion
 
+## 关于使用
+其实就是多抄，这又不用debug。
 
 ## begin
 readme.zh-cn.html
