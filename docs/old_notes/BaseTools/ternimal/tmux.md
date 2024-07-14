@@ -65,16 +65,12 @@
 		(2) 用鼠标选中文本，被选中的文本会被自动复制到tmux的剪贴板
 		(3) CTRL+b，然后按]，会将剪贴板中的内容粘贴到光标处
 
+## iterm2
+
+学了一下是什么`tmux -CC`什么的命令，没学懂,感觉也不好使。
+
+TODO: 文章说还可以服务器上起什么的balabala，可能和之前看到的一篇跨主机用gdb调试c程序有关，这个可以闲的蛋疼看看。
 
 ## config
-```shell
-# 颜色支持
-set -g default-terminal "screen-256color"
-# 鼠标支持
-set -g mouse on
-# ESC时间，vimESC不卡顿, can not set 0,不然启动会出现乱码，虽然无伤大雅
-set -s escape-time 10
-# 设置大小防止名字过长显示不全
-set-option -g status-left-length 100
 
-```
+见配置文件
