@@ -6,3 +6,4 @@ local opt = vim.opt
 opt.relativenumber = false -- 相对行号
 opt.spelllang = {}
 opt.shiftwidth = 4 -- 缩进大小
+opt.tabstop = 4

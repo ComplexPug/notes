@@ -1,0 +1,1 @@
+bindkey '^K' clear # 替换clear为清屏而不是上移
