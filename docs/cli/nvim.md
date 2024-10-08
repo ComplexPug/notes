@@ -1,11 +1,7 @@
--- Options are automatically loaded before lazy.nvim startup
--- Default options that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/options.lua
--- Add any additional options here
+g got提示
+[
+]
+v virtual tips
+space 某种提示
 
-local opt = vim.opt
-opt.relativenumber = false -- 相对行号
-opt.spelllang = {}
-opt.shiftwidth = 4 -- 缩进大小
-opt.tabstop = 4
-opt.conceallevel = 0
 

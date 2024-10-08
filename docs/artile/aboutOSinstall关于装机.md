@@ -24,7 +24,7 @@ GPT GUID Partition Table 全局唯一标识分区列表，最大内存和分区�
 可以不严谨地说没人不用UEFI+GPT
 
 ## 如何制作自己的iso镜像
-
+直接硬盘挂载，看arch wiki
 
 ## 各种硬盘格式
 

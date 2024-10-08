@@ -1,9 +1,5 @@
 # Vim
 
-h           左
-j           下
-k           上
-l           右
 ^ 或 0      首
 $           尾
  
@@ -17,11 +13,6 @@ w   使命令光标移动一个单词
 W   移动下一个大写单词
 b   倒退一个单词
 B   倒退时标点/符号不算
- 
-[{  Jump to block start
-   Move cursor to matching parenthesis
- 
- 
  
 G   移动到文件结尾
 1G  到达文件顶端
@@ -37,34 +28,26 @@ o/O    新增一行，o下面加，O上面加
 s/S    删除后面的字母，S删除一
 cc     等于S
 ## normal下的修改
-D   清空一行
-dd  复制一行并删除
+D   删除尾巴
 r   替换字母，只替换一次，R可以一直替换，直到Esc。
-s   同c加space
 S   删除一行并插入 同cc
 x   删除一个字母
-~   大小写转换
- 
-移动时先用d做删除,再用p进行放置
-复制时选用y做"拖曳"动作,再用p进行放置.
+~   选中单词的大小写转换
  
 cw  从光标到这个单词的结尾
 c2b 从光标往前两个单词
 c$ 从光标到本行结尾  同 "C"
 c0
  
-cc  将一整行换成输入文本
+cc  将一整行删除，并
 cw 和 cc工作方式不同.使用cw时,原来的文本会先留着,直到输入内容逐渐将它覆盖掉,而任何余下的原文本(到$为止的文本),在按下ESC后立即消失.但使用cc时,原文本会立即消失
  
 dw  删除单词
-dd与D   删除一行
-db  向前删除
-d$ 和 d0
- 
-D 是d$的简写
- 
- 
-xp  对调两个字母
+db  向前删除单词
+dd 删一行
+d$ = D
+d0 = d^ 
+ bca
  
 y   拖曳
 yw  y$  4yy
@@ -74,7 +57,7 @@ yy  -> 2j   -> P
  
 jp  光标往下移一行再将粘贴
  
- 
+************************************************** 
  
 50i*ESC #会插入50星号
 ||换成&&    2r&
@@ -96,15 +79,13 @@ y 复制选中
 y$ 复制
 
 ## 复制粘贴 
-y   copy the selected text to clipboard
+y   yank => copy
 p   paste clipboard contents
 D   Cut to the end of line
 dd  Cut current line
 y$  copy to end line
-yy  copy current line
+yy  copy one line 
 
-## 跳转
-基本通用于各种模式下，也是。
 [[
 ][
 []
@@ -113,9 +94,6 @@ gg
 G
 w
 e
-
-## 查找和替换
-搭配正则更好用。
 
 ## 选中
 选中需要切换模式，与normal，insert模型平级。

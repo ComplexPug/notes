@@ -1,0 +1,80 @@
+<h1 id="random-随机数">Random 随机数</h1>
+<h2 id="开始之前">开始之前</h2>
+<p>之前用随机数很随性，一开始用c++
+random，后来用pbds的什么“mt19937真随机数”。也知道一些<code>ax+b</code>的到随机数的原理。直到后面遇到一个脑筋题：</p>
+<blockquote>
+<p>用 <code>get_7()</code> 函数的到 <code>get_41()</code> 函数，其中的
+<code>get_7()</code> 是等概率的的到 <code>[0,7)</code>
+区间的正整数。</p>
+</blockquote>
+<p>虽然后面知道答案了，但联想到之前写代码的到较大随机数临时自己写的
+<code>def get_big_random() {get_small_random()**2</code>
+加上最近编译内核出现了<code>/dev/urandom</code>丢失的问题。</p>
+<p>探究一下。</p>
+<h2 id="分类">分类</h2>
+<p>随机数的特征是不可预测的，无周期的，概率均等出现。在这些前提下肯定是性能越高越好。</p>
+<p>伪随机数通过设置种子这个不变量来生成伪随机数。
+真随机数通过动态获取参数来生成真随机数。参数可以是任何随机的事件，放射性衰变，大气噪声等。</p>
+<h2 id="伪随机数发生器">伪随机数发生器</h2>
+<p>伪随机数发生器 Pseudo-Random Number Generator，简称 PRNG</p>
+<p>需要设置种子参数来初始化。存在周期，可预测，性能比TRNG好。</p>
+<h3 id="线性同余生成器-lcg">线性同余生成器 LCG</h3>
+<p><span
+class="math display"><em>X</em>(<em>n</em> + 1) = (<em>a</em> * <em>X</em>(<em>n</em>) + <em>c</em>)</span></p>
+<p>简单，存在周期性和固定性。</p>
+<p>可能c语言的random是用这个写的。</p>
+<h3 id="梅森旋转算法mersenne-twister">梅森旋转算法（Mersenne
+Twister）</h3>
+<p><a
+href="https://zh.wikipedia.org/wiki/%E6%A2%85%E6%A3%AE%E6%97%8B%E8%BD%AC%E7%AE%97%E6%B3%95">wekipeida</a>
+感兴趣可以看，我不感兴趣。</p>
+<p>MT19937是其最常见的变体，得名于其周期为2^19937−1的梅森素数。</p>
+<p>c++中的mt19937,<code>mt19937_64</code>分别是32bit和64bit的。</p>
+<p>周期长，速度快，占用缓存大，依旧是伪随机算法。</p>
+<h2
+id="关于randn和randrand">关于rand()%n和<code>rand()*rand()</code></h2>
+<p>对于想获得 <span class="math inline">[0, <em>n</em>)</span> 来说，
+random()%n
+并不是真正随机的，因为如果<code>RAND_MAX%n</code>不等于0，那么1%n到<code>RAND_MAX%n</code>中必定会有两个数出现的次数不相同。</p>
+<p>对于 rand() * rand()
+来说，出现概率和他的因子个数有关，比如质数那她两个rand就必然得出现一个1才可以，概率并不均等。</p>
+<h2 id="得到随机数范围">得到随机数范围</h2>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 如get_7得到get_41，通常是这样的</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> get_49():</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> get_7()<span class="op">*</span><span class="dv">7</span><span class="op">+</span>get_7()</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> get_41():</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    val <span class="op">=</span> get_49()</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">while</span> val <span class="op">&gt;</span> <span class="dv">41</span>:</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>        val <span class="op">=</span> get_49()</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> val</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="co"># 更通用的</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> get_MAX_INT():</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>    <span class="cf">pass</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> get_random(x:<span class="bu">int</span>):</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>    limit <span class="op">=</span> MAX_INT <span class="op">-</span> MAX_INT <span class="op">%</span> x</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>    val <span class="op">=</span> get_MAX_INT()</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>    <span class="cf">while</span> val <span class="op">&gt;</span> limit:</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>        val <span class="op">=</span> get_MAX_INT()</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> val <span class="op">%</span> x</span></code></pre></div>
+<h2 id="devrandom-devurandom是干什么用的"><code>/dev/random</code>
+<code>/dev/urandom</code>是干什么用的</h2>
+<p>定位内核源码的<code>drivers/char/random.c</code>位置,基于熵（这几天开启服务器时候，无聊看远程屏幕的开机日志/dev/random的会停留一下hh）</p>
+<p><code>urandom</code>的u是unblocked的意思，random调用的时候熵不够多会阻塞直到满。不过那是以前了。</p>
+<p>现在的random程序的是一个：安全的伪随机数字生成。（来自源码）</p>
+<p>而且从<a
+href="https://wiki.archlinux.org/index.php?title=Random_number_generation">Arch
+Linux rng doc</a> 中看，两者效果差不多。</p>
+<p>而且现在不会阻塞了，也不会消耗熵（256保持），因为CRNG。</p>
+<p>那她就是单纯的把熵作为随机种子吗,不是。密钥会动态抹除的重算。</p>
+<p>代码大概就是多了熵的收集、累计处理和fast-key-erasure RNG : crng
+快速擦出密钥生成。</p>
+<p>不过没有周期和种子也不可复现和预测了。而且默认<code>/dev/random</code>是<code>/dev/urandom</code></p>
+<pre class="shell"><code>
+/proc/sys/kernel/random # 查看系统熵池的容量，熵的多少等。
+# 可以查看源码中的注释: sysctl interface 部分
+
+cat /dev/random # 查看随机数</code></pre>

@@ -1,4 +1,5 @@
 ```text
+tldr: too long，don't read，一个简化版man，感觉比man好多了，毕竟man又臭又长，一般人都不会看，但tldr搜索比较慢
 marktext markdown开源软件
 cloc 统计代码行
 postman,apipost : api测试软件
