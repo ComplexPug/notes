@@ -39,7 +39,7 @@ pacman -Syyu
 pacman -S <package-name> # 官方包
 yay -Syyu # 更新，不同于pacman，他会更新aur
 yay -R <name> # remove 
-yay -Qm # 列出所有package
+yay -Qm | yay -Q # 列出所有package
 yay -S <package-name> # install aur包
 yay -Ss <name> # 搜索包
 ```
